@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E5F521F-16AD-4244-B3F1-F72B036C7777}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sk</RootNamespace>
+    <AssemblyName>sk</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\System.Data.SQLite.Core.1.0.112.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.109.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.112.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddInVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInVisit.Designer.cs">
+      <DependentUpon>AddInVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeBranch.Designer.cs">
+      <DependentUpon>AddOrChangeBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeCabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeCabinet.Designer.cs">
+      <DependentUpon>AddOrChangeCabinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeClient.Designer.cs">
+      <DependentUpon>AddOrChangeClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeService.Designer.cs">
+      <DependentUpon>AddOrChangeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeTTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeTTB.Designer.cs">
+      <DependentUpon>AddOrChangeTTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeTTW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeTTW.Designer.cs">
+      <DependentUpon>AddOrChangeTTW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeVisit.Designer.cs">
+      <DependentUpon>AddOrChangeVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrChangeWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrChangeWorker.Designer.cs">
+      <DependentUpon>AddOrChangeWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Branch.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="FormCabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCabinet.Designer.cs">
+      <DependentUpon>FormCabinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClient.Designer.cs">
+      <DependentUpon>FormClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService.Designer.cs">
+      <DependentUpon>FormService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTTB.Designer.cs">
+      <DependentUpon>FormTTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTTW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTTW.Designer.cs">
+      <DependentUpon>FormTTW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisit.Designer.cs">
+      <DependentUpon>FormVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorker.Designer.cs">
+      <DependentUpon>FormWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBranch.Designer.cs">
+      <DependentUpon>FormBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatTTW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepeatTTW.Designer.cs">
+      <DependentUpon>RepeatTTW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeBranch.Designer.cs">
+      <DependentUpon>SeeBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeCabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeCabinet.Designer.cs">
+      <DependentUpon>SeeCabinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeClient.Designer.cs">
+      <DependentUpon>SeeClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeService.Designer.cs">
+      <DependentUpon>SeeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeVisit.Designer.cs">
+      <DependentUpon>SeeVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeeWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeeWorker.Designer.cs">
+      <DependentUpon>SeeWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs" />
+    <Compile Include="TimetableBranch.cs" />
+    <Compile Include="Visit.cs" />
+    <Compile Include="Worker.cs" />
+    <EmbeddedResource Include="AddInVisit.resx">
+      <DependentUpon>AddInVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeBranch.resx">
+      <DependentUpon>AddOrChangeBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeCabinet.resx">
+      <DependentUpon>AddOrChangeCabinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeClient.resx">
+      <DependentUpon>AddOrChangeClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeService.resx">
+      <DependentUpon>AddOrChangeService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeTTB.resx">
+      <DependentUpon>AddOrChangeTTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeTTW.resx">
+      <DependentUpon>AddOrChangeTTW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeVisit.resx">
+      <DependentUpon>AddOrChangeVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrChangeWorker.resx">
+      <DependentUpon>AddOrChangeWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCabinet.resx">
+      <DependentUpon>FormCabinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClient.resx">
+      <DependentUpon>FormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService.resx">
+      <DependentUpon>FormService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTTB.resx">
+      <DependentUpon>FormTTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTTW.resx">
+      <DependentUpon>FormTTW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisit.resx">
+      <DependentUpon>FormVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWorker.resx">
+      <DependentUpon>FormWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBranch.resx">
+      <DependentUpon>FormBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RepeatTTW.resx">
+      <DependentUpon>RepeatTTW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeBranch.resx">
+      <DependentUpon>SeeBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeCabinet.resx">
+      <DependentUpon>SeeCabinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeClient.resx">
+      <DependentUpon>SeeClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeService.resx">
+      <DependentUpon>SeeService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeVisit.resx">
+      <DependentUpon>SeeVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeeWorker.resx">
+      <DependentUpon>SeeWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
