@@ -118,6 +118,7 @@
       <DependentUpon>AddOrChangeWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="Branch.cs" />
+    <Compile Include="Cabinet.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="FormCabinet.cs">
       <SubType>Form</SubType>

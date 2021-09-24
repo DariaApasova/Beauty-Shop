@@ -25,16 +25,29 @@ namespace sk
         public WorkerContext():base("EducationDB") { }
         public DbSet<Worker> Workers { get; set; } 
     }
-   /* public class WorkersCache
+     public class WorkersCache
     {
-        private static Dictionary<int, object> allWorkers;
+        private static Dictionary<int, Worker> allWorkers;
         public WorkersCache()
         {
             allWorkers = readWorkers();
         }
-        /*private Dictionary<int, object> readWorkers()
+        public Dictionary<int, Worker> getCache()
         {
-
+            return allWorkers;
         }
-    }*/
+        private Dictionary<int, Worker> readWorkers()
+        {
+            Dictionary<int, Worker> dict = new Dictionary<int, Worker>();
+            using (WorkerContext wc = new WorkerContext())
+            {
+                var w = wc.Workers;
+                foreach (Worker s in w)
+                {
+                    dict.Add(s.id, s);
+                }
+            }
+            return dict;
+        }
+    }
 }

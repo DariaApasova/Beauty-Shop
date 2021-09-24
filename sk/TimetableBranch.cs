@@ -36,38 +36,29 @@ namespace sk
     }
     public class TimetableBranchCache
     {
-        private List<TimetableBranch> allTTB;
+        private static Dictionary<int, TimetableBranch> allTTB;
         public TimetableBranchCache()
         {
-            allTTB = new List<TimetableBranch>();
             allTTB = readTTB();
 
         }
-        public List<TimetableBranch> readTTB()
+        public Dictionary<int, TimetableBranch> readTTB()
         {
-            List<TimetableBranch> list = new List<TimetableBranch>();
+            Dictionary<int, TimetableBranch> list = new Dictionary<int, TimetableBranch>();
             using (TTBContext ttb = new TTBContext())
             {
                 var tt = ttb.TTBs;
                 foreach(TimetableBranch t in tt)
                 {
-                    string temp = "";
-                    temp += $"{t.id_timetable};";
-                    temp += $"{t.beginning};";
-                    temp += $"{t.start};";
-                    temp += $"{t.end};";
-                    temp += $"{t.ending};";
-                    temp += Convert.ToString(t.date_delete);
-                    string[] pr = temp.Split(new string[] { ";" }, StringSplitOptions.None);
-                    TimetableBranch ttbranch = new TimetableBranch(pr);
-                    list.Add(ttbranch);
+
+                    list.Add(t.id_timetable, t);
                 }
             }
             return list;
         }
         public TimetableBranch findByID(int id)
         {
-            return allTTB.Find(x => x.id_timetable == id);
+            return allTTB.Where(x => x.Key == id).FirstOrDefault().Value;
         }
     }
 }

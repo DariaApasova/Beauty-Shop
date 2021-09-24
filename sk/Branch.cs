@@ -33,29 +33,21 @@ namespace sk
     }
     public class BranchCache
     {
-        private List<Branch> allBranches;
+        private static Dictionary<int, Branch> allBranches;
         public BranchCache(TimetableBranchCache ttb)
         {
-            allBranches = new List<Branch>();
             allBranches = readBranch(ttb);
         }
-        public List<Branch> readBranch(TimetableBranchCache ttb)
+        public Dictionary<int,Branch> readBranch(TimetableBranchCache ttb)
         {
-            List<Branch> list = new List<Branch>();
+           Dictionary<int,Branch> list = new Dictionary<int, Branch>();
             using (BranchContext dc = new BranchContext())
             {
                 var branches = dc.Branches;
                 foreach(Branch b in branches)
                 {
-                    string temp = "";
-                    temp += $"{b.id};";
-                    temp += $"{b.id_timetable};";
-                    temp += $"{b.name};";
-                    temp += $"{b.address};";
-                    temp += Convert.ToString(b.date_delete);
-                    string[] pr = temp.Split(new string[] { ";" }, StringSplitOptions.None);
-                    Branch br = new Branch(pr, ttb);
-                    list.Add(br);
+
+                    list.Add(b.id, b);
                 }
             }
             return list;

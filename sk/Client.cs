@@ -26,24 +26,24 @@ namespace sk
     }
     public class ClientsCache
     {
-        private static List<Client> allClients;
+        private static Dictionary<int, Client> allClients;
         public ClientsCache()
         {
             allClients = readClients();
         }
-        public List<Client> getCache()
+        public Dictionary<int, Client> getCache()
         {
             return allClients;
         }
-        private List<Client> readClients()
+        private Dictionary<int,Client> readClients()
         {
-            List<Client> list = new List<Client>();
+           Dictionary<int, Client> list = new Dictionary<int, Client>();
             using (ClientContext cc = new ClientContext())
             {
                 var clients = cc.Clients;
                 foreach(Client c in clients)
                 {
-                    list.Add(c);
+                    list.Add(c.id,c);
                 }
             }
             return list;
