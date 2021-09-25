@@ -30,7 +30,7 @@ namespace sk
             textBox2.Enabled = false;
             textBox3.Text =Convert.ToString( service1.price);
             textBox3.Enabled = false;
-            textBox4.Text = service1.duration;
+            textBox4.Text = Convert.ToString(service1.duration);
             textBox4.Enabled = false;
             richTextBox1.Text = service1.notes;
             richTextBox1.Enabled = false;

@@ -15,7 +15,7 @@ namespace sk
         public int id { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
-        public string  duration { get; set; }
+        public TimeSpan  duration { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
         public Service()

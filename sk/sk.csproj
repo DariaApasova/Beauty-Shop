@@ -220,6 +220,7 @@
     </Compile>
     <Compile Include="Service.cs" />
     <Compile Include="TimetableBranch.cs" />
+    <Compile Include="TimetableWorker.cs" />
     <Compile Include="Visit.cs" />
     <Compile Include="Worker.cs" />
     <EmbeddedResource Include="AddInVisit.resx">

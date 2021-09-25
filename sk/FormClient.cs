@@ -30,7 +30,7 @@ namespace sk
             }
             dataGridView1.Rows.Clear();
                 int r = 0;
-                foreach(Client c in clients.getCache())
+                foreach(Client c in clients.getCache().Values)
                 {
                     dataGridView1.Rows.Add();
                     dataGridView1[0, r].Value = c.id;

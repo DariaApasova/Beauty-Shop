@@ -51,7 +51,7 @@ namespace sk
             {
                 notes.Text = s.notes;
             }
-            duration.Text = s.duration;
+            duration.Text =Convert.ToString( s.duration);
             price.Text =Convert.ToString(s.price);
         }
         private void fillNewService()
@@ -66,13 +66,13 @@ namespace sk
         {
             Service service = service1;
             service1.title = title.Text;
-            service1.duration = duration.Text;
+            service1.duration = TimeSpan.Parse(duration.Text);
             service1.price = Convert.ToDecimal(price.Text);
             service1.notes = notes.Text;
             service1.date_delete = Convert.ToDateTime("31.12.9999 12:00:00");
             using (ServiceContext sc = new ServiceContext())
             {
-                Service s1 = new Service { id = curid, title = title.Text, price = Convert.ToDecimal(price.Text), duration = duration.Text, notes = notes.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00")};
+                Service s1 = new Service { id = curid, title = title.Text, price = Convert.ToDecimal(price.Text), duration =TimeSpan.Parse( duration.Text), notes = notes.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00")};
                 if (check == "add")
                 {
                     sc.Services.Add(s1);
