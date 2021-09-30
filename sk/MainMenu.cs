@@ -15,24 +15,21 @@ namespace sk
     public partial class MainMenu : Form
     {
         string check = "see";
-        ServicesCache service;
-        ClientsCache clients;
-        //BranchCache branches;
-       // TimetableBranchCache ttbc;
         public MainMenu()
         {
             InitializeComponent();
-            service = new ServicesCache();
-            clients = new ClientsCache();
-            //branches = new BranchCache(ttbc);
-            //load();
+            load();
+            
         }
         private void load()
         {
+            Dictionary<int, Service> services = ServicesCache.getCache();
+            Dictionary<int, Client> clients = ClientsCache.getCache();
         }
         private void seeClients_Click(object sender, EventArgs e)
         {
-            FormClient form = new FormClient(check, clients);
+          
+            FormClient form = new FormClient(check);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
@@ -50,7 +47,8 @@ namespace sk
         }
         private void seeServices_Click(object sender, EventArgs e)
         {
-            FormService form = new FormService(check, service);
+            Dictionary<int, Service> dict = ServicesCache.getCache();
+            FormService form = new FormService(check);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

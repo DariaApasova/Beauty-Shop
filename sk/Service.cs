@@ -15,16 +15,21 @@ namespace sk
         public int id { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
-        public TimeSpan  duration { get; set; }
+        public string  duration { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
         public Service()
         {
-            
         }
-        public Service(int id)
+        public void addService(Service s)
         {
-            this.id = id;
+            Dictionary<int, Service> dict = ServicesCache.getCache();
+            dict.Add(s.id, s);
+        }
+        public Service getService(int id)
+        {
+            Dictionary<int, Service> dict = ServicesCache.getCache();
+            return dict.Where(x => x.Key == id).FirstOrDefault().Value;
         }
     }
     class ServiceContext:DbContext
@@ -32,61 +37,33 @@ namespace sk
         public ServiceContext() : base("EducationDB"){ }
         public DbSet<Service> Services { get; set; }
     }
-    public class ServicesCache
+    class ServicesCache
     {
-        private static Dictionary<int, Service> allServices;
-        public ServicesCache()
+        private ServicesCache()
         {
-            allServices= readServices();
+            allServices = readServices();
         }
-        public Dictionary<int, Service> getCache()
+        private static Dictionary<int, Service> allServices = new Dictionary<int, Service>();
+        public  static Dictionary<int, Service> getCache()
         {
+            if(allServices.Count==0)
+            {
+                ServicesCache a = new ServicesCache();
+            }
             return allServices;
         }
         private Dictionary<int, Service> readServices()
         {
-            Dictionary<int, Service> dict = new Dictionary<int,Service>();
             using (ServiceContext sc = new ServiceContext())
             {
                 var services = sc.Services;
                 foreach (Service s in services)
                 {
-                    dict.Add(s.id, s);
+                    allServices.Add(s.id, s);
                 }
             }
-            return dict;
+            return allServices;
         }
-        public void addService(Service s)
-        {
-            allServices.Add(s.id, s);
-        }
-        public Service getService(int id)
-        {
-            return allServices.Where(x => x.Key == id).FirstOrDefault().Value;
-        }
-        public int getMaxID()
-        {
-            int max = 0;
-            foreach(Service s in allServices.Values)
-            {
-                if(s.id>max)
-                {
-                    max = s.id;
-                }
-            }
-            return max;
-        }
-        public void replaceServices(Service s)
-        {
-            int index = 0;
-            foreach(Service se in allServices.Values)
-            {
-                if(se.id==s.id)
-                {
-                    index = se.id;
-                    allServices[index] = s;
-                }
-            }
-        }
+       
     }
 }

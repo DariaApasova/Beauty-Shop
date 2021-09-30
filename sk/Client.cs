@@ -18,35 +18,48 @@ namespace sk
         {
 
         }
+        public void addClient(Client s)
+        {
+            Dictionary<int, Client> dict = ClientsCache.getCache();
+            dict.Add(s.id, s);
+        }
+        public Client getClient(int id)
+        {
+            Dictionary<int, Client> dict = ClientsCache.getCache();
+            return dict.Where(x => x.Key == id).FirstOrDefault().Value;
+        }
     }
     class ClientContext:DbContext
     {
         public ClientContext():base("EducationDB"){ }
         public DbSet<Client> Clients { get; set; }
     }
-    public class ClientsCache
+    class ClientsCache
     {
-        private static Dictionary<int, Client> allClients;
-        public ClientsCache()
+        private ClientsCache()
         {
             allClients = readClients();
         }
-        public Dictionary<int, Client> getCache()
+        private static Dictionary<int, Client> allClients= new Dictionary<int, Client>();
+        public static Dictionary<int, Client> getCache()
         {
+            if(allClients.Count==0)
+            {
+                ClientsCache a = new ClientsCache();
+            }
             return allClients;
         }
         private Dictionary<int,Client> readClients()
         {
-           Dictionary<int, Client> list = new Dictionary<int, Client>();
             using (ClientContext cc = new ClientContext())
             {
                 var clients = cc.Clients;
                 foreach(Client c in clients)
                 {
-                    list.Add(c.id,c);
+                    allClients.Add(c.id,c);
                 }
             }
-            return list;
+            return allClients;
         }
     }
 }

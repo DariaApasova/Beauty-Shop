@@ -13,12 +13,11 @@ namespace sk
     public partial class FormClient : Form
     {
         string check;
-        ClientsCache clients;
-        public FormClient(string check1, ClientsCache c)
+        Dictionary<int, Client> dict = ClientsCache.getCache();
+        public FormClient(string check1)
         {
             InitializeComponent();
             check = check1;
-            clients = c;
             load();
         }
 
@@ -30,7 +29,7 @@ namespace sk
             }
             dataGridView1.Rows.Clear();
                 int r = 0;
-                foreach(Client c in clients.getCache().Values)
+                foreach(Client c in dict.Values)
                 {
                     dataGridView1.Rows.Add();
                     dataGridView1[0, r].Value = c.id;

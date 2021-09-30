@@ -13,13 +13,12 @@ namespace sk
 {
     public partial class SeeService : Form
     {
-        ServicesCache services;
-        Service service1 = new Service(1);
-        public SeeService(Service s, ServicesCache sc)
+        Dictionary<int, Service> dict = ServicesCache.getCache();
+        Service service1 = new Service();
+        public SeeService(Service s)
         {
             InitializeComponent();
             service1= s;
-            services = sc;
             load();
         }
         private void load()
@@ -34,7 +33,7 @@ namespace sk
             textBox4.Enabled = false;
             richTextBox1.Text = service1.notes;
             richTextBox1.Enabled = false;
-            fillStatistics();
+          //  fillStatistics();
         }
         private void fillStatistics()
         {
@@ -49,7 +48,7 @@ namespace sk
         }
         private void change_CLick(object sender, EventArgs e)
         {
-            AddOrChangeService form = new AddOrChangeService(service1, services, "change");
+            AddOrChangeService form = new AddOrChangeService(service1, "change");
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

@@ -14,13 +14,13 @@ namespace sk
     {
         string check;
         Service s;
-        ServicesCache services;
+        // ServicesCache services;
+        Dictionary<int, Service> dict = ServicesCache.getCache();
         int curid;
-        public FormService(string check1, ServicesCache s)
+        public FormService(string check1)
         {
             InitializeComponent();
             check = check1;
-            services = s;
             load();
         }
         private void load()
@@ -31,7 +31,7 @@ namespace sk
             }
             dataGridView1.Rows.Clear();
             int r = 0;
-            foreach (Service s in services.getCache().Values)
+            foreach (Service s in dict.Values)
             {
                 dataGridView1.Rows.Add();
                 dataGridView1[0, r].Value = s.id;
@@ -42,7 +42,7 @@ namespace sk
                 r++;
             }
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+       private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
@@ -50,8 +50,8 @@ namespace sk
                 var h = dataGridView1.Rows[t].Cells[0].Value;
                 curid = Convert.ToInt32(h);
             }
-            Service see = services.getService(curid);
-            SeeService form = new SeeService(see, services);
+            Service see = dict[curid];
+            SeeService form = new SeeService(see);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.FormClosing += new FormClosingEventHandler(formCLosed);
             form.ShowDialog();
@@ -59,11 +59,11 @@ namespace sk
         }
         private void newService_CLick(object sender, EventArgs e)
         {
-            curid = services.getMaxID() + 1;
-            Service serv = new Service(Convert.ToInt32(curid));
+           // curid = services.getMaxID() + 1;
+            Service serv = new Service();
             serv.id = curid;
-            services.addService(serv);
-            AddOrChangeService form = new AddOrChangeService(serv, services, "add");
+            s.addService(serv);
+            AddOrChangeService form = new AddOrChangeService(serv, "add");
             form.StartPosition = FormStartPosition.CenterScreen;
             form.FormClosing+=new FormClosingEventHandler(formCLosed);
             form.ShowDialog();
