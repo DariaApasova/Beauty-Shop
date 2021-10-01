@@ -70,6 +70,7 @@ namespace sk
         }
         void formCLosed(object sender, FormClosingEventArgs e)
         {
+            ServicesCache.updateCache();
             load();
         }
     }

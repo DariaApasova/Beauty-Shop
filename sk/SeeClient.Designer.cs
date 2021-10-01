@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete_visit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,6 +86,24 @@
             this.tabPage1.Text = "Клиент";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(360, 153);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 52);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Добавить визит";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(560, 161);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(86, 37);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(468, 161);
@@ -94,6 +112,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Изменить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.change_CLick);
             // 
             // groupBox2
             // 
@@ -121,7 +140,6 @@
             this.label5.Size = new System.Drawing.Size(168, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Количество посещений:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox1
             // 
@@ -267,24 +285,6 @@
             this.delete_visit.Name = "delete_visit";
             this.delete_visit.Text = "Удалить";
             this.delete_visit.UseColumnTextForButtonValue = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(560, 161);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 37);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(360, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 52);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Добавить визит";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // SeeClient
             // 

@@ -81,6 +81,7 @@ namespace sk
                     sc.Entry(service1).State = System.Data.Entity.EntityState.Modified;
                 }
                 sc.SaveChanges();
+                
             }
         }
         private void save_Click(object sender, EventArgs e)

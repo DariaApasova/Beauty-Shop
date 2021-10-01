@@ -49,6 +49,13 @@ namespace sk
             }
             return allClients;
         }
+        public static Dictionary<int, Client> updateCache()
+        {
+            allClients.Clear();
+            ClientsCache a = new ClientsCache();
+            return allClients;
+        }
+            
         private Dictionary<int,Client> readClients()
         {
             using (ClientContext cc = new ClientContext())

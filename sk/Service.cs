@@ -52,6 +52,12 @@ namespace sk
             }
             return allServices;
         }
+        public static Dictionary<int, Service> updateCache()
+        {
+            allServices.Clear();
+            ServicesCache a = new ServicesCache();
+            return allServices;
+        }
         private Dictionary<int, Service> readServices()
         {
             using (ServiceContext sc = new ServiceContext())

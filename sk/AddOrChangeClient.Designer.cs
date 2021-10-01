@@ -45,7 +45,6 @@
             this.label1.Size = new System.Drawing.Size(97, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Имя клиента:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -95,6 +94,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.save_Click);
             // 
             // AddOrChangeClient
             // 
@@ -110,7 +110,6 @@
             this.Controls.Add(this.label1);
             this.Name = "AddOrChangeClient";
             this.Text = "AddOrChangeClient";
-            this.Load += new System.EventHandler(this.AddOrChangeClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
