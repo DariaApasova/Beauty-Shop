@@ -25,6 +25,7 @@ namespace sk
         {
             Dictionary<int, Service> services = ServicesCache.getCache();
             Dictionary<int, Client> clients = ClientsCache.getCache();
+            Dictionary<int, Visit> visits = VisitsCache.getCache();
         }
         private void seeClients_Click(object sender, EventArgs e)
         {
@@ -47,7 +48,6 @@ namespace sk
         }
         private void seeServices_Click(object sender, EventArgs e)
         {
-            Dictionary<int, Service> dict = ServicesCache.getCache();
             FormService form = new FormService(check);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();

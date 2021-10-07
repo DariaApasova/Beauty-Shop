@@ -13,6 +13,8 @@ namespace sk
     public partial class FormVisit : Form
     {
         string check;
+        Client c;
+        Dictionary<int, Visit> dict = VisitsCache.getCache();
         public FormVisit(string check1)
         {
             InitializeComponent();
@@ -28,13 +30,17 @@ namespace sk
             using (VisitContext vc = new VisitContext())
             {
                 dataGridView2.Rows.Clear();
-                var visits = vc.Visits;
                 int r = 0;
-                foreach(Visit v in visits)
+                foreach (Visit v in dict.Values)
                 {
-                   /* dataGridView2.Rows.Add();
+                    dataGridView2.Rows.Add();
                     dataGridView2[0, r].Value = v.id;
-                    dataGridView2[1,r].Value=v.*/
+                    dataGridView2[1, r].Value = v.client.name;
+                    dataGridView2[3, r].Value = v.date_visit;
+                    dataGridView2[4, r].Value = v.duration;
+                    dataGridView2[5, r].Value = v.price;
+                    dataGridView2[6, r].Value = v.notes;
+                    r++;
                 }
             }
         }

@@ -66,9 +66,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.id_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.client_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,9 +82,9 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_visit,
-            this.name_c,
+            this.client_name,
             this.branch,
-            this.date_time,
+            this.date_visit,
             this.duration,
             this.price,
             this.note,
@@ -437,20 +437,20 @@
             this.id_visit.HeaderText = "Номер посещения";
             this.id_visit.Name = "id_visit";
             // 
-            // name_c
+            // client_name
             // 
-            this.name_c.HeaderText = "Имя клиента";
-            this.name_c.Name = "name_c";
+            this.client_name.HeaderText = "Имя клиента";
+            this.client_name.Name = "client_name";
             // 
             // branch
             // 
             this.branch.HeaderText = "Филиал";
             this.branch.Name = "branch";
             // 
-            // date_time
+            // date_visit
             // 
-            this.date_time.HeaderText = "Дата и время";
-            this.date_time.Name = "date_time";
+            this.date_visit.HeaderText = "Дата и время";
+            this.date_visit.Name = "date_visit";
             // 
             // duration
             // 
@@ -535,9 +535,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_visit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_c;
+        private System.Windows.Forms.DataGridViewTextBoxColumn client_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn branch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_visit;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;

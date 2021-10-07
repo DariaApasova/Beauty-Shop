@@ -10,48 +10,55 @@ namespace sk
     public class Visit
     {
         public int id { get; set; }
-        public Client id_client { get; set; }
+        public Client client { get; set; }
         public DateTime date_visit { get; set; }
-        public TimeSpan duration { get; set; }
+        public DateTime duration { get; set; }
         public decimal price { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
         public Visit()
         {
         }
-        public Visit(int idd)
-        {
-            this.id = idd;
-        }
     }
     class VisitContext:DbContext
     {
         public VisitContext() : base("EducationDB") { }
+        public DbSet<Client> Clients { get; set; }
         public DbSet<Visit> Visits { get; set; }
+        
     }
-    public class VisitsCache
+   static class VisitsCache
     {
-        private static Dictionary<int, Visit> allVisits;
-        public VisitsCache()
+        private static Dictionary<int, Visit> allVisits= new Dictionary<int, Visit>();
+        public static  Dictionary<int, Visit> getCache()
         {
-            allVisits = readVisits();
-        }
-        private Dictionary<int, Visit> getCache()
-        {
-            return allVisits;
-        }
-        private Dictionary<int, Visit> readVisits()
-        {
-            Dictionary<int, Visit> dict = new Dictionary<int, Visit>();
-            using (VisitContext vc = new VisitContext())
+            if(allVisits.Count()==0)
             {
-                var visits=vc.Visits;
-                foreach(Visit v in visits)
+                using (VisitContext vc = new VisitContext())
                 {
-                    dict.Add(v.id, v);
+                    var visits = vc.Visits.Include(x => x.client).ToList();
+                    foreach (var v in visits)
+                    {
+
+                        allVisits.Add(v.id, v);
+                    }
                 }
             }
-            return dict;
+            return allVisits;
+        }
+        public static Dictionary<int,Visit> updateCache()
+        {
+            allVisits.Clear();
+            using (VisitContext vc = new VisitContext())
+            {
+                var visits = vc.Visits.Include(x => x.id).ToList();
+                foreach (var v in visits)
+                {
+
+                    allVisits.Add(v.id, v);
+                }
+            }
+            return allVisits;
         }
     }
     

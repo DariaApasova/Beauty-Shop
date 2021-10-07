@@ -37,29 +37,27 @@ namespace sk
         public ServiceContext() : base("EducationDB"){ }
         public DbSet<Service> Services { get; set; }
     }
-    class ServicesCache
+   static class ServicesCache
     {
-        private ServicesCache()
-        {
-            allServices = readServices();
-        }
         private static Dictionary<int, Service> allServices = new Dictionary<int, Service>();
         public  static Dictionary<int, Service> getCache()
         {
             if(allServices.Count==0)
             {
-                ServicesCache a = new ServicesCache();
+                using (ServiceContext sc = new ServiceContext())
+                {
+                    var services = sc.Services;
+                    foreach (Service s in services)
+                    {
+                        allServices.Add(s.id, s);
+                    }
+                }
             }
             return allServices;
         }
         public static Dictionary<int, Service> updateCache()
         {
             allServices.Clear();
-            ServicesCache a = new ServicesCache();
-            return allServices;
-        }
-        private Dictionary<int, Service> readServices()
-        {
             using (ServiceContext sc = new ServiceContext())
             {
                 var services = sc.Services;
@@ -70,6 +68,5 @@ namespace sk
             }
             return allServices;
         }
-       
     }
 }

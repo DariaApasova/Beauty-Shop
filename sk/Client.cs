@@ -26,7 +26,9 @@ namespace sk
         public Client getClient(int id)
         {
             Dictionary<int, Client> dict = ClientsCache.getCache();
-            return dict.Where(x => x.Key == id).FirstOrDefault().Value;
+
+            Client a = dict[id];
+            return a;
         }
     }
     class ClientContext:DbContext
@@ -34,36 +36,33 @@ namespace sk
         public ClientContext():base("EducationDB"){ }
         public DbSet<Client> Clients { get; set; }
     }
-    class ClientsCache
+      static  class  ClientsCache
     {
-        private ClientsCache()
-        {
-            allClients = readClients();
-        }
         private static Dictionary<int, Client> allClients= new Dictionary<int, Client>();
         public static Dictionary<int, Client> getCache()
         {
             if(allClients.Count==0)
             {
-                ClientsCache a = new ClientsCache();
+                using (ClientContext cc = new ClientContext())
+                {
+                    var clients = cc.Clients;
+                    foreach (Client c in clients)
+                    {
+                        allClients.Add(c.id, c);
+                    }
+                }
             }
             return allClients;
         }
         public static Dictionary<int, Client> updateCache()
         {
             allClients.Clear();
-            ClientsCache a = new ClientsCache();
-            return allClients;
-        }
-            
-        private Dictionary<int,Client> readClients()
-        {
             using (ClientContext cc = new ClientContext())
             {
                 var clients = cc.Clients;
-                foreach(Client c in clients)
+                foreach (Client c in clients)
                 {
-                    allClients.Add(c.id,c);
+                    allClients.Add(c.id, c);
                 }
             }
             return allClients;
