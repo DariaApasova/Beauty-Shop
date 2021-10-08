@@ -25,7 +25,6 @@ namespace sk
         {
             Dictionary<int, Service> services = ServicesCache.getCache();
             Dictionary<int, Client> clients = ClientsCache.getCache();
-            Dictionary<int, Visit> visits = VisitsCache.getCache();
         }
         private void seeClients_Click(object sender, EventArgs e)
         {

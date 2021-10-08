@@ -27,7 +27,7 @@ namespace sk
         public DbSet<Visit> Visits { get; set; }
         
     }
-   static class VisitsCache
+  /* static class VisitsCache
     {
         private static Dictionary<int, Visit> allVisits= new Dictionary<int, Visit>();
         public static  Dictionary<int, Visit> getCache()
@@ -60,6 +60,6 @@ namespace sk
             }
             return allVisits;
         }
-    }
+    }*/
     
 }

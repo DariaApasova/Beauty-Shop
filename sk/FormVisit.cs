@@ -14,7 +14,7 @@ namespace sk
     {
         string check;
         Client c;
-        Dictionary<int, Visit> dict = VisitsCache.getCache();
+      //  Dictionary<int, Visit> dict = VisitsCache.getCache();
         public FormVisit(string check1)
         {
             InitializeComponent();
@@ -31,16 +31,18 @@ namespace sk
             {
                 dataGridView2.Rows.Clear();
                 int r = 0;
-                foreach (Visit v in dict.Values)
-                {
-                    dataGridView2.Rows.Add();
-                    dataGridView2[0, r].Value = v.id;
-                    dataGridView2[1, r].Value = v.client.name;
-                    dataGridView2[3, r].Value = v.date_visit;
-                    dataGridView2[4, r].Value = v.duration;
-                    dataGridView2[5, r].Value = v.price;
-                    dataGridView2[6, r].Value = v.notes;
-                    r++;
+                var visits = vc.Visits.Include("Client").ToList();
+                    foreach (var v in visits)
+                    {
+
+                        dataGridView2.Rows.Add();
+                        dataGridView2[0, r].Value = v.id;
+                        dataGridView2[1, r].Value = v.client.name;
+                        dataGridView2[3, r].Value = v.date_visit;
+                        dataGridView2[4, r].Value = v.duration;
+                        dataGridView2[5, r].Value = v.price;
+                        dataGridView2[6, r].Value = v.notes;
+                        r++;
                 }
             }
         }
