@@ -13,6 +13,7 @@ namespace sk
     public partial class FormCabinet : Form
     {
         string check;
+        Dictionary<int, Cabinet> dict = CabinetsCache.getCache();
         public FormCabinet(string check1)
         {
             InitializeComponent();
@@ -24,6 +25,18 @@ namespace sk
             if (check == "see")
             {
                 dataGridView1.Columns[5].Visible = false;
+            }
+            dataGridView1.Rows.Clear();
+            int r = 0;
+            foreach(Cabinet c in dict.Values)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, r].Value = c.id;
+                dataGridView1[1, r].Value = c.cabinet_name;
+                dataGridView1[2, r].Value = c.capacity;
+                dataGridView1[3, r].Value = c.notes;
+                dataGridView1[4, r].Value = c.branch.name;
+                r++;
             }
         }
     }

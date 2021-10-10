@@ -17,14 +17,7 @@ namespace sk
         string check = "see";
         public MainMenu()
         {
-            InitializeComponent();
-            load();
-            
-        }
-        private void load()
-        {
-            Dictionary<int, Service> services = ServicesCache.getCache();
-            Dictionary<int, Client> clients = ClientsCache.getCache();
+            InitializeComponent();            
         }
         private void seeClients_Click(object sender, EventArgs e)
         {

@@ -33,7 +33,7 @@ namespace sk
                 foreach(TimetableBranch t in ttb)
                 {
                     dataGridView2.Rows.Add();
-                    dataGridView2[0, r].Value = t.id_timetable;
+                    dataGridView2[0, r].Value = t.id;
                     dataGridView2[2, r].Value = t.beginning;
                     dataGridView2[3, r].Value = t.start;
                     dataGridView2[4, r].Value = t.end;

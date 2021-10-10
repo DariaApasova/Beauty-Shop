@@ -12,7 +12,7 @@ namespace sk
         public int id { get; set; }
         public string cabinet_name { get; set; }
         public int capacity { get; set; }
-        public Branch id_branch { get; set; }
+        public Branch branch { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
         public Cabinet()
@@ -23,31 +23,39 @@ namespace sk
     class CabinetsContext : DbContext
     {
         public CabinetsContext() : base("EducationDB") { }
+        public DbSet<Branch> Branches { get; set;  }
         public DbSet<Cabinet> Cabinets { get; set; }
     }
-    public class CabinetsCache
+    static class CabinetsCache
     {
-        private static Dictionary<int, Cabinet> allCabinets;
-        public CabinetsCache()
+        private static Dictionary<int, Cabinet> allCabinets=new Dictionary<int, Cabinet>();
+        public static Dictionary<int,Cabinet> getCache()
         {
-            allCabinets = readCabinets();
-        }
-        public Dictionary<int,Cabinet> getCache()
-        {
-            return allCabinets;
-        }
-        private Dictionary<int, Cabinet> readCabinets()
-        {
-            Dictionary<int, Cabinet> dict = new Dictionary<int, Cabinet>();
-            using (CabinetsContext cc = new CabinetsContext())
+            if(allCabinets.Count==0)
             {
-                var c = cc.Cabinets;
-                foreach(Cabinet ca in c)
+                using (CabinetsContext cc = new CabinetsContext())
                 {
-                    dict.Add(ca.id, ca);
+                    var c = cc.Cabinets.Include(x => x.branch).ToList();
+                    foreach (Cabinet ca in c)
+                    {
+                        allCabinets.Add(ca.id, ca);
+                    }
                 }
             }
-            return dict;
+            return allCabinets;
+        }
+        public static Dictionary<int, Cabinet> updateCache()
+        {
+            allCabinets.Clear();
+            using (CabinetsContext cc = new CabinetsContext())
+            {
+                var c = cc.Cabinets.Include(x => x.branch).ToList();
+                foreach(Cabinet ca in c)
+                {
+                    allCabinets.Add(ca.id, ca);
+                }
+            }
+            return allCabinets;
         }
     }
 }

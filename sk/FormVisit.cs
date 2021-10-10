@@ -14,7 +14,6 @@ namespace sk
     {
         string check;
         Client c;
-      //  Dictionary<int, Visit> dict = VisitsCache.getCache();
         public FormVisit(string check1)
         {
             InitializeComponent();

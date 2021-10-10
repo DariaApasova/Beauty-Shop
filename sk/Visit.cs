@@ -27,39 +27,4 @@ namespace sk
         public DbSet<Visit> Visits { get; set; }
         
     }
-  /* static class VisitsCache
-    {
-        private static Dictionary<int, Visit> allVisits= new Dictionary<int, Visit>();
-        public static  Dictionary<int, Visit> getCache()
-        {
-            if(allVisits.Count()==0)
-            {
-                using (VisitContext vc = new VisitContext())
-                {
-                    var visits = vc.Visits.Include(x => x.client).ToList();
-                    foreach (var v in visits)
-                    {
-
-                        allVisits.Add(v.id, v);
-                    }
-                }
-            }
-            return allVisits;
-        }
-        public static Dictionary<int,Visit> updateCache()
-        {
-            allVisits.Clear();
-            using (VisitContext vc = new VisitContext())
-            {
-                var visits = vc.Visits.Include(x => x.id).ToList();
-                foreach (var v in visits)
-                {
-
-                    allVisits.Add(v.id, v);
-                }
-            }
-            return allVisits;
-        }
-    }*/
-    
 }

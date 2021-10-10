@@ -13,6 +13,7 @@ namespace sk
     public partial class FormBranch : Form
     {
         string check;
+        Dictionary<int, Branch> dict = BranchCache.getCache();
         public FormBranch(string check1)
         {
             InitializeComponent();
@@ -24,6 +25,17 @@ namespace sk
             if (check=="see")
             {
                 dataGridView1.Columns[4].Visible = false;
+            }
+            dataGridView1.Rows.Clear();
+            int r = 0;
+            foreach(Branch b in dict.Values)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, r].Value = b.id;
+                dataGridView1[1, r].Value = b.timetable.id;
+                dataGridView1[2, r].Value = b.name;
+                dataGridView1[3, r].Value = b.address;
+                r++;
             }
         }
         private void select_ttb_Click(object sender, EventArgs e)

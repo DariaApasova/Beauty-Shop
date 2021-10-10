@@ -58,7 +58,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.id_ttw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_dranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +72,6 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_ttw,
-            this.day,
             this.time_start,
             this.time_end,
             this.id_dranch,
@@ -349,20 +347,14 @@
             this.id_ttw.HeaderText = "Номер расписания";
             this.id_ttw.Name = "id_ttw";
             // 
-            // day
-            // 
-            this.day.HeaderText = "Дата";
-            this.day.Name = "day";
-            this.day.Width = 90;
-            // 
             // time_start
             // 
-            this.time_start.HeaderText = "Время начала";
+            this.time_start.HeaderText = "Начало";
             this.time_start.Name = "time_start";
             // 
             // time_end
             // 
-            this.time_end.HeaderText = "Время конца";
+            this.time_end.HeaderText = "Конец";
             this.time_end.Name = "time_end";
             // 
             // id_dranch
@@ -437,7 +429,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_ttw;
-        private System.Windows.Forms.DataGridViewTextBoxColumn day;
         private System.Windows.Forms.DataGridViewTextBoxColumn time_start;
         private System.Windows.Forms.DataGridViewTextBoxColumn time_end;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_dranch;

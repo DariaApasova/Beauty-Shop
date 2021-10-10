@@ -10,47 +10,52 @@ namespace sk
     public class Branch
     {
         public int id { get; set; }
-        public TimetableBranch id_timetable { get; set; }
+        public TimetableBranch timetable { get; set; }
         public string name { get; set; }
         public string address { get; set; }
         public DateTime date_delete { get; set; }
         public Branch()
-        { }
-        public Branch(string[] pr, TimetableBranchCache ttb)
         {
-            this.id = Convert.ToInt32(pr[0]);
-            int t = Convert.ToInt32(pr[1]);
-            this.id_timetable = ttb.findByID(t);
-            this.name = pr[2];
-            this.address = pr[3];
-            this.date_delete = Convert.ToDateTime(pr[4]);
         }
     }
     class BranchContext:DbContext
     {
         public BranchContext() : base("EducationDB") { }
+        public DbSet<TimetableBranch> TTBs { get; set; }
         public DbSet<Branch> Branches { get; set; }
     }
-    public class BranchCache
+    static class BranchCache
     {
-        private static Dictionary<int, Branch> allBranches;
-        public BranchCache(TimetableBranchCache ttb)
+        private static Dictionary<int, Branch> allBranches= new Dictionary<int, Branch>();
+        public static Dictionary<int,Branch> getCache()
         {
-            allBranches = readBranch(ttb);
+           if(allBranches.Count==0)
+            {
+                using (BranchContext dc = new BranchContext())
+                {
+                    var branches = dc.Branches.Include(x=>x.timetable).ToList();
+                    foreach (Branch b in branches)
+                    {
+
+                       allBranches.Add(b.id, b);
+                    }
+                }
+            }
+            return allBranches;
         }
-        public Dictionary<int,Branch> readBranch(TimetableBranchCache ttb)
+        public static Dictionary<int, Branch> updateCache()
         {
-           Dictionary<int,Branch> list = new Dictionary<int, Branch>();
+            allBranches.Clear();
             using (BranchContext dc = new BranchContext())
             {
                 var branches = dc.Branches;
-                foreach(Branch b in branches)
+                foreach (Branch b in branches)
                 {
 
-                    list.Add(b.id, b);
+                    allBranches.Add(b.id, b);
                 }
             }
-            return list;
+            return allBranches;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace sk
     public class TimetableWorker
     {
         public int id { get; set; }
-        public string day { get; set; }
         public string opening { get; set; }
         public string closing { get; set; }
         public Branch branch { get; set; }
@@ -24,28 +23,8 @@ namespace sk
     class TTWContext:DbContext
     {
         public TTWContext() : base("EducationDB") { }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Worker> Workers { get; set; }
         public DbSet<TimetableWorker> TTWs { get; set; }
-    }
-    public class TimetableWorkerCache
-    {
-        private static Dictionary<int, TimetableWorker> allTTW;
-        public TimetableWorkerCache()
-        {
-            allTTW = readTTW();
-        }
-        public Dictionary<int, TimetableWorker> readTTW()
-        {
-            Dictionary<int, TimetableWorker> list = new Dictionary<int, TimetableWorker>();
-            using (TTWContext ttw = new TTWContext())
-            {
-                var tk = ttw.TTWs;
-                foreach (TimetableWorker t in tk)
-                {
-
-                    list.Add(t.id, t);
-                }
-            }
-            return list;
-        }
     }
 }

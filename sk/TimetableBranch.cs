@@ -9,7 +9,7 @@ namespace sk
 {
     public class TimetableBranch
     {
-        public int id_timetable { get; set; }
+        public int id { get; set; }
         public string beginning { get; set; }
         public string start { get; set; }
         public string end { get; set; }
@@ -19,46 +19,44 @@ namespace sk
         {
 
         }
-        public TimetableBranch(string []pr)
-        {
-            this.id_timetable = Convert.ToInt32(pr[0]);
-            this.beginning = pr[1];
-            this.start = pr[2];
-            this.end = pr[3];
-            this.ending = pr[4];
-            this.date_delete = Convert.ToDateTime(pr[5]);
-        }
     }
     public class TTBContext:DbContext
     {
         public TTBContext() : base("EducationDB") { }
         public DbSet<TimetableBranch> TTBs { get; set; }
     }
-    public class TimetableBranchCache
+    static class TimetableBranchCache
     {
-        private static Dictionary<int, TimetableBranch> allTTB;
-        public TimetableBranchCache()
+        private static Dictionary<int, TimetableBranch> allTTB= new Dictionary<int, TimetableBranch>();
+        public static Dictionary<int, TimetableBranch> getCache()
         {
-            allTTB = readTTB();
+            if(allTTB.Count==0)
+            {
+                using (TTBContext ttb = new TTBContext())
+                {
+                    var tt = ttb.TTBs;
+                    foreach (TimetableBranch t in tt)
+                    {
 
+                        allTTB.Add(t.id, t);
+                    }
+                }
+            }
+            return allTTB;
         }
-        public Dictionary<int, TimetableBranch> readTTB()
+        public static Dictionary<int, TimetableBranch> updateCache()
         {
-            Dictionary<int, TimetableBranch> list = new Dictionary<int, TimetableBranch>();
+            allTTB.Clear();
             using (TTBContext ttb = new TTBContext())
             {
                 var tt = ttb.TTBs;
-                foreach(TimetableBranch t in tt)
+                foreach (TimetableBranch t in tt)
                 {
 
-                    list.Add(t.id_timetable, t);
+                    allTTB.Add(t.id, t);
                 }
             }
-            return list;
-        }
-        public TimetableBranch findByID(int id)
-        {
-            return allTTB.Where(x => x.Key == id).FirstOrDefault().Value;
+            return allTTB;
         }
     }
 }

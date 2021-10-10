@@ -13,6 +13,7 @@ namespace sk
     public partial class FormWorker : Form
     {
         string check;
+        Dictionary<int, Worker> dict = WorkersCache.getCache();
         public FormWorker(string check1)
         {
             InitializeComponent();
@@ -25,12 +26,9 @@ namespace sk
             {
                 dataGridView1.Columns[5].Visible = false;
             }
-            using (WorkerContext wc = new WorkerContext())
-            {
                 dataGridView1.Rows.Clear();
-                var workers = wc.Workers;
                 int r = 0;
-                foreach(Worker w in workers)
+                foreach(Worker w in dict.Values)
                 {
                     dataGridView1.Rows.Add();
                     dataGridView1[0,r].Value = w.id;
@@ -40,7 +38,6 @@ namespace sk
                     dataGridView1[4, r].Value = w.notes;
                     r++;
                 }
-            }
         }
     }
 }
