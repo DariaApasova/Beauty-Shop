@@ -30,15 +30,26 @@ namespace sk
                 dataGridView2.Rows.Clear();
                 var ttb = timetableb.TTBs;
                 int r = 0;
+                int count = 0;
                 foreach(TimetableBranch t in ttb)
                 {
+                    Dictionary<int, Branch> d = BranchCache.getCache();
+                        foreach(Branch w in d.Values)
+                        {
+                            if(w.timetable.id==t.id)
+                            {
+                                count++;
+                            }
+                        }
                     dataGridView2.Rows.Add();
                     dataGridView2[0, r].Value = t.id;
+                    dataGridView2[1, r].Value = count;
                     dataGridView2[2, r].Value = t.beginning;
                     dataGridView2[3, r].Value = t.start;
                     dataGridView2[4, r].Value = t.end;
                     dataGridView2[5, r].Value = t.ending;
                     r++;
+                    count = 0; 
                 }
             }
         }

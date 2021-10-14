@@ -42,8 +42,6 @@ namespace sk
                     r++;
 
                 }
-
-
             }
         }
     }
