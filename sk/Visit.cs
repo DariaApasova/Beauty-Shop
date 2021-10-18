@@ -16,6 +16,7 @@ namespace sk
         public decimal price { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Branch> Branches { get; set; }
         public Visit()
         {
         }

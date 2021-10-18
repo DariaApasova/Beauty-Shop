@@ -14,6 +14,7 @@ namespace sk
         public string name { get; set; }
         public string address { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Visit> Visits { get; set; }
         public Branch()
         {
         }
