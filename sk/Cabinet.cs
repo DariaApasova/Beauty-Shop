@@ -15,6 +15,7 @@ namespace sk
         public Branch branch { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Service>Services { get; set; } =new List<Service>();
         public Cabinet()
         {
 
@@ -23,7 +24,8 @@ namespace sk
     class CabinetsContext : DbContext
     {
         public CabinetsContext() : base("EducationDB") { }
-        public DbSet<Branch> Branches { get; set;  }
+        public DbSet<Branch> Branches { get; set; }
+        public DbSet<Service> Services { get; set; }
         public DbSet<Cabinet> Cabinets { get; set; }
     }
     static class CabinetsCache
@@ -39,6 +41,14 @@ namespace sk
                     foreach (Cabinet ca in c)
                     {
                         allCabinets.Add(ca.id, ca);
+                    }
+                    var  t = cc.Cabinets.Include(x => x.Services).ToList();
+                    foreach(Cabinet cab in t)
+                    {
+                        int n = cab.Services.Count();
+                        
+                       
+                            
                     }
                 }
             }

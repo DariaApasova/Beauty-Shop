@@ -13,6 +13,7 @@ namespace sk
     public partial class FormCabinet : Form
     {
         string check;
+        int idChange;
         Dictionary<int, Cabinet> dict = CabinetsCache.getCache();
         public FormCabinet(string check1)
         {
@@ -22,6 +23,7 @@ namespace sk
         }
         private void load()
         {
+            dataGridView1.ReadOnly = true;
             if (check == "see")
             {
                 dataGridView1.Columns[5].Visible = false;
@@ -38,6 +40,25 @@ namespace sk
                 dataGridView1[4, r].Value = c.branch.name;
                 r++;
             }
+        }
+        private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex!=-1)
+            {
+                int t = e.RowIndex;
+                var h = dataGridView1.Rows[t].Cells[0].Value;
+                idChange = Convert.ToInt16(h);
+                seeCabinet();
+            }
+        }
+        private void seeCabinet()
+        {
+            Dictionary<int, Cabinet> dict = CabinetsCache.getCache();
+            Cabinet see =dict.FirstOrDefault(t => t.Key == idChange).Value;
+            SeeCabinet form = new SeeCabinet(see);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+
         }
     }
 }

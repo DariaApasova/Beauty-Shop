@@ -18,6 +18,7 @@ namespace sk
         public string  duration { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Cabinet> Cabinets { get; set; } = new List<Cabinet>();
         public Service()
         {
         }
@@ -36,6 +37,7 @@ namespace sk
     {
         public ServiceContext() : base("EducationDB"){ }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Cabinet> Cabinets { get; set; }
     }
    static class ServicesCache
     {

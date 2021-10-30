@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,12 +56,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.id_cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -77,6 +77,41 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(751, 487);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.choice_CellDoubleClick);
+            // 
+            // id_cabinet
+            // 
+            this.id_cabinet.HeaderText = "Номер кабинета";
+            this.id_cabinet.Name = "id_cabinet";
+            this.id_cabinet.Width = 80;
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Номер в филиале";
+            this.number.Name = "number";
+            this.number.Width = 80;
+            // 
+            // capacity
+            // 
+            this.capacity.HeaderText = "Вместимость";
+            this.capacity.Name = "capacity";
+            this.capacity.Width = 80;
+            // 
+            // notes
+            // 
+            this.notes.HeaderText = "Примечания";
+            this.notes.Name = "notes";
+            // 
+            // id_branch
+            // 
+            this.id_branch.HeaderText = "Филиал";
+            this.id_branch.Name = "id_branch";
+            this.id_branch.Width = 80;
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Выбрать";
+            this.select.Name = "select";
             // 
             // groupBox1
             // 
@@ -270,40 +305,6 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Назад";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // id_cabinet
-            // 
-            this.id_cabinet.HeaderText = "Номер кабинета";
-            this.id_cabinet.Name = "id_cabinet";
-            this.id_cabinet.Width = 80;
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Номер в филиале";
-            this.number.Name = "number";
-            this.number.Width = 80;
-            // 
-            // capacity
-            // 
-            this.capacity.HeaderText = "Вместимость";
-            this.capacity.Name = "capacity";
-            this.capacity.Width = 80;
-            // 
-            // notes
-            // 
-            this.notes.HeaderText = "Примечания";
-            this.notes.Name = "notes";
-            // 
-            // id_branch
-            // 
-            this.id_branch.HeaderText = "Филиал";
-            this.id_branch.Name = "id_branch";
-            this.id_branch.Width = 80;
-            // 
-            // select
-            // 
-            this.select.HeaderText = "Выбрать";
-            this.select.Name = "select";
             // 
             // FormCabinet
             // 
