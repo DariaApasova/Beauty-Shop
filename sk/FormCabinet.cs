@@ -53,7 +53,6 @@ namespace sk
         }
         private void seeCabinet()
         {
-            Dictionary<int, Cabinet> dict = CabinetsCache.getCache();
             Cabinet see =dict.FirstOrDefault(t => t.Key == idChange).Value;
             SeeCabinet form = new SeeCabinet(see);
             form.StartPosition = FormStartPosition.CenterScreen;

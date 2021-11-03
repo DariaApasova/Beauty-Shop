@@ -13,8 +13,8 @@ namespace sk
     public partial class FormService : Form
     {
         string check;
+        int idChange;
         Service s;
-        // ServicesCache services;
         Dictionary<int, Service> dict = ServicesCache.getCache();
         int curid;
         public FormService(string check1)
@@ -42,20 +42,23 @@ namespace sk
                 r++;
             }
         }
-       private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 int t = e.RowIndex;
                 var h = dataGridView1.Rows[t].Cells[0].Value;
-                curid = Convert.ToInt32(h);
+                idChange = Convert.ToInt16(h);
+                seeCabinet();
             }
-            Service see = dict[curid];
+        }
+        private void seeCabinet()
+        {
+            Service see = dict.FirstOrDefault(t => t.Key == idChange).Value;
             SeeService form = new SeeService(see);
             form.StartPosition = FormStartPosition.CenterScreen;
-            form.FormClosing += new FormClosingEventHandler(formCLosed);
             form.ShowDialog();
-           
+
         }
         private void newService_CLick(object sender, EventArgs e)
         {

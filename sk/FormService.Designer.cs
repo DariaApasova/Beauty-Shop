@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.newService = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.newService = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(668, 539);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.choice_CellDoubleClick);
             // 
             // id_service
             // 
@@ -171,6 +171,16 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
+            // 
+            // newService
+            // 
+            this.newService.Location = new System.Drawing.Point(551, 107);
+            this.newService.Name = "newService";
+            this.newService.Size = new System.Drawing.Size(84, 46);
+            this.newService.TabIndex = 20;
+            this.newService.Text = "Создать новую";
+            this.newService.UseVisualStyleBackColor = true;
+            this.newService.Click += new System.EventHandler(this.newService_CLick);
             // 
             // checkBox1
             // 
@@ -346,16 +356,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(76, 24);
             this.comboBox3.TabIndex = 11;
-            // 
-            // newService
-            // 
-            this.newService.Location = new System.Drawing.Point(551, 107);
-            this.newService.Name = "newService";
-            this.newService.Size = new System.Drawing.Size(84, 46);
-            this.newService.TabIndex = 20;
-            this.newService.Text = "Создать новую";
-            this.newService.UseVisualStyleBackColor = true;
-            this.newService.Click += new System.EventHandler(this.newService_CLick);
             // 
             // FormService
             // 

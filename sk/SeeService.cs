@@ -33,18 +33,7 @@ namespace sk
             textBox4.Enabled = false;
             richTextBox1.Text = service1.notes;
             richTextBox1.Enabled = false;
-          //  fillStatistics();
-        }
-        private void fillStatistics()
-        {
-            using (var connect = new SQLiteConnection(@"Data Source=EducationDB"))
-            {
-                connect.Open();
-                SQLiteCommand comm = connect.CreateCommand();
-                comm.CommandText = $"SELECT count(*) as count FROM services_visits_workers WHERE id_service={service1.id};";
-                var str = comm.ExecuteReader();
-                textBox5.Text = Convert.ToString(str);
-            }
+            textBox7.Text = Convert.ToString(service1.Cabinets.Count());
         }
         private void change_CLick(object sender, EventArgs e)
         {

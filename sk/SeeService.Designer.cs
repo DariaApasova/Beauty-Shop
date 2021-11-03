@@ -58,6 +58,8 @@
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete_worker = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,6 +133,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.label7);
@@ -144,7 +148,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(240, 105);
+            this.textBox6.Location = new System.Drawing.Point(240, 108);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 22);
             this.textBox6.TabIndex = 11;
@@ -331,6 +335,22 @@
             this.delete_worker.HeaderText = "Удалить";
             this.delete_worker.Name = "delete_worker";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 78);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(213, 17);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Кол-во подходящих кабинетов:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(240, 72);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.TabIndex = 13;
+            // 
             // SeeService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -383,5 +403,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label8;
     }
 }
