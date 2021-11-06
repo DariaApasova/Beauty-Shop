@@ -13,6 +13,7 @@ namespace sk
     public partial class FormBranch : Form
     {
         string check;
+        int idChange;
         Dictionary<int, Branch> dict = BranchCache.getCache();
         public FormBranch(string check1)
         {
@@ -49,6 +50,24 @@ namespace sk
             AddOrChangeBranch form = new AddOrChangeBranch();
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+        }
+        private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int t = e.RowIndex;
+                var h = dataGridView1.Rows[t].Cells[0].Value;
+                idChange = Convert.ToInt16(h);
+                seeCabinet();
+            }
+        }
+        private void seeCabinet()
+        {
+            Branch see = dict.FirstOrDefault(t => t.Key == idChange).Value;
+            SeeBranch form = new SeeBranch(see);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace sk
         public string address { get; set; }
         public DateTime date_delete { get; set; }
         public List<Visit> Visits { get; set; }
+        public List<Cabinet> Cabinets { get; set; }
         public Branch()
         {
         }
@@ -23,6 +24,7 @@ namespace sk
     {
         public BranchContext() : base("EducationDB") { }
         public DbSet<TimetableBranch> TTBs { get; set; }
+        public DbSet<Cabinet> Cabinets { get; set; }
         public DbSet<Branch> Branches { get; set; }
     }
     static class BranchCache
@@ -37,8 +39,12 @@ namespace sk
                     var branches = dc.Branches.Include(x=>x.timetable).ToList();
                     foreach (Branch b in branches)
                     {
-
                        allBranches.Add(b.id, b);
+                    }
+                    var br = dc.Branches.Include(x => x.Cabinets).ToList();
+                    foreach(Branch b in br)
+                    {
+                        int n = b.Cabinets.Count();
                     }
                 }
             }
