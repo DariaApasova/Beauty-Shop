@@ -58,7 +58,6 @@ namespace sk
                 var branches = dc.Branches;
                 foreach (Branch b in branches)
                 {
-
                     allBranches.Add(b.id, b);
                 }
             }

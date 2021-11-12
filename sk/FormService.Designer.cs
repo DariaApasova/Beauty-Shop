@@ -145,7 +145,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.newService);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label10);
@@ -174,9 +173,9 @@
             // 
             // newService
             // 
-            this.newService.Location = new System.Drawing.Point(551, 107);
+            this.newService.Location = new System.Drawing.Point(540, 716);
             this.newService.Name = "newService";
-            this.newService.Size = new System.Drawing.Size(84, 46);
+            this.newService.Size = new System.Drawing.Size(133, 34);
             this.newService.TabIndex = 20;
             this.newService.Text = "Создать новую";
             this.newService.UseVisualStyleBackColor = true;
@@ -211,9 +210,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(507, 58);
+            this.button5.Location = new System.Drawing.Point(551, 61);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 45);
+            this.button5.Size = new System.Drawing.Size(85, 32);
             this.button5.TabIndex = 12;
             this.button5.Text = "Сбросить";
             this.button5.UseVisualStyleBackColor = true;
@@ -222,9 +221,9 @@
             // 
             this.button3.Location = new System.Drawing.Point(442, 61);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 32);
+            this.button3.Size = new System.Drawing.Size(103, 32);
             this.button3.TabIndex = 10;
-            this.button3.Text = "ОК";
+            this.button3.Text = "Применить";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // textBox6
@@ -316,7 +315,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(109, 716);
+            this.button6.Location = new System.Drawing.Point(31, 716);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(76, 32);
             this.button6.TabIndex = 7;
@@ -325,7 +324,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(274, 716);
+            this.button7.Location = new System.Drawing.Point(195, 716);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 32);
             this.button7.TabIndex = 8;
@@ -335,7 +334,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(399, 724);
+            this.label9.Location = new System.Drawing.Point(289, 724);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 17);
             this.label9.TabIndex = 9;
@@ -344,7 +343,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(512, 721);
+            this.comboBox1.Location = new System.Drawing.Point(402, 721);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 10;
@@ -352,7 +351,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(192, 721);
+            this.comboBox3.Location = new System.Drawing.Point(113, 721);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(76, 24);
             this.comboBox3.TabIndex = 11;
@@ -362,6 +361,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 760);
+            this.Controls.Add(this.newService);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);

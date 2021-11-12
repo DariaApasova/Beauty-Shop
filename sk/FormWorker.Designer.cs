@@ -54,6 +54,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.addNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(488, 53);
+            this.button2.Location = new System.Drawing.Point(502, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 27);
             this.button2.TabIndex = 18;
@@ -166,9 +167,9 @@
             // 
             this.button1.Location = new System.Drawing.Point(378, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 29);
+            this.button1.Size = new System.Drawing.Size(91, 29);
             this.button1.TabIndex = 17;
-            this.button1.Text = "ОК";
+            this.button1.Text = "Применить";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
@@ -239,7 +240,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(62, 680);
+            this.button3.Location = new System.Drawing.Point(15, 680);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 28);
             this.button3.TabIndex = 8;
@@ -248,7 +249,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(239, 680);
+            this.button4.Location = new System.Drawing.Point(182, 681);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(81, 28);
             this.button4.TabIndex = 9;
@@ -258,7 +259,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(469, 683);
+            this.comboBox2.Location = new System.Drawing.Point(381, 683);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 11;
@@ -266,7 +267,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(356, 686);
+            this.label5.Location = new System.Drawing.Point(269, 686);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 17);
             this.label5.TabIndex = 10;
@@ -275,16 +276,26 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(150, 683);
+            this.comboBox4.Location = new System.Drawing.Point(102, 684);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(74, 24);
             this.comboBox4.TabIndex = 12;
+            // 
+            // addNew
+            // 
+            this.addNew.Location = new System.Drawing.Point(508, 675);
+            this.addNew.Name = "addNew";
+            this.addNew.Size = new System.Drawing.Size(131, 32);
+            this.addNew.TabIndex = 16;
+            this.addNew.Text = "Добавить нового";
+            this.addNew.UseVisualStyleBackColor = true;
             // 
             // FormWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 716);
+            this.Controls.Add(this.addNew);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
@@ -329,5 +340,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button addNew;
     }
 }

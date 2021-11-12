@@ -51,6 +51,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.addNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(5, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(545, 600);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 600);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -98,7 +99,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(209, 756);
+            this.button2.Location = new System.Drawing.Point(174, 757);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 28);
             this.button2.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(39, 756);
+            this.button3.Location = new System.Drawing.Point(5, 757);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 28);
             this.button3.TabIndex = 6;
@@ -117,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 763);
+            this.label2.Location = new System.Drawing.Point(261, 763);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 7;
@@ -126,7 +127,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(425, 760);
+            this.comboBox1.Location = new System.Drawing.Point(374, 760);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 8;
@@ -146,7 +147,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(5, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(541, 132);
+            this.groupBox2.Size = new System.Drawing.Size(643, 132);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
@@ -197,7 +198,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(435, 32);
+            this.button5.Location = new System.Drawing.Point(512, 27);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(82, 36);
             this.button5.TabIndex = 11;
@@ -206,11 +207,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(344, 27);
+            this.button4.Location = new System.Drawing.Point(397, 27);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 46);
+            this.button4.Size = new System.Drawing.Size(93, 36);
             this.button4.TabIndex = 5;
-            this.button4.Text = "ОК";
+            this.button4.Text = "Применить";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // textBox2
@@ -248,16 +249,26 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(127, 758);
+            this.comboBox3.Location = new System.Drawing.Point(92, 760);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(76, 24);
             this.comboBox3.TabIndex = 11;
+            // 
+            // addNew
+            // 
+            this.addNew.Location = new System.Drawing.Point(517, 757);
+            this.addNew.Name = "addNew";
+            this.addNew.Size = new System.Drawing.Size(131, 32);
+            this.addNew.TabIndex = 16;
+            this.addNew.Text = "Добавить новый";
+            this.addNew.UseVisualStyleBackColor = true;
             // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 796);
+            this.ClientSize = new System.Drawing.Size(660, 796);
+            this.Controls.Add(this.addNew);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox1);
@@ -300,5 +311,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button addNew;
     }
 }

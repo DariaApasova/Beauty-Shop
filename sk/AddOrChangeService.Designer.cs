@@ -36,8 +36,8 @@
             this.notes = new System.Windows.Forms.RichTextBox();
             this.save = new System.Windows.Forms.Button();
             this.duration = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,14 +63,14 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 17);
+            this.label3.Size = new System.Drawing.Size(100, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Продолжительность:";
+            this.label3.Text = "Прод-ть(мин):";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 170);
+            this.label4.Location = new System.Drawing.Point(9, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 3;
@@ -85,17 +85,17 @@
             // 
             // notes
             // 
-            this.notes.Location = new System.Drawing.Point(121, 170);
+            this.notes.Location = new System.Drawing.Point(121, 143);
             this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(197, 73);
+            this.notes.Size = new System.Drawing.Size(197, 99);
             this.notes.TabIndex = 7;
             this.notes.Text = "";
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(12, 202);
+            this.save.Location = new System.Drawing.Point(48, 251);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(93, 41);
+            this.save.Size = new System.Drawing.Size(95, 38);
             this.save.TabIndex = 8;
             this.save.Text = "Сохранить";
             this.save.UseVisualStyleBackColor = true;
@@ -103,19 +103,10 @@
             // 
             // duration
             // 
-            this.duration.Location = new System.Drawing.Point(161, 105);
+            this.duration.Location = new System.Drawing.Point(121, 105);
             this.duration.Name = "duration";
-            this.duration.Size = new System.Drawing.Size(157, 22);
+            this.duration.Size = new System.Drawing.Size(197, 22);
             this.duration.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "(в минутах)";
             // 
             // title
             // 
@@ -125,13 +116,22 @@
             this.title.TabIndex = 11;
             this.title.Text = "";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(160, 251);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 38);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Отменить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // AddOrChangeService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 259);
+            this.ClientSize = new System.Drawing.Size(332, 301);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.duration);
             this.Controls.Add(this.save);
             this.Controls.Add(this.notes);
@@ -157,7 +157,7 @@
         private System.Windows.Forms.RichTextBox notes;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.TextBox duration;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox title;
+        private System.Windows.Forms.Button button3;
     }
 }

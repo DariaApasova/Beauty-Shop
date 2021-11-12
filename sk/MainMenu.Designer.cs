@@ -47,9 +47,9 @@
             this.groupBox1.Controls.Add(this.seeCabinets);
             this.groupBox1.Controls.Add(this.seeVisits);
             this.groupBox1.Controls.Add(this.seeBranches);
+            this.groupBox1.Controls.Add(this.seeClients);
             this.groupBox1.Controls.Add(this.seeWorkers);
             this.groupBox1.Controls.Add(this.seeServices);
-            this.groupBox1.Controls.Add(this.seeClients);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 324);
@@ -59,7 +59,7 @@
             // 
             // seeCabinets
             // 
-            this.seeCabinets.Location = new System.Drawing.Point(27, 271);
+            this.seeCabinets.Location = new System.Drawing.Point(27, 223);
             this.seeCabinets.Name = "seeCabinets";
             this.seeCabinets.Size = new System.Drawing.Size(136, 42);
             this.seeCabinets.TabIndex = 5;
@@ -69,7 +69,7 @@
             // 
             // seeVisits
             // 
-            this.seeVisits.Location = new System.Drawing.Point(27, 223);
+            this.seeVisits.Location = new System.Drawing.Point(27, 31);
             this.seeVisits.Name = "seeVisits";
             this.seeVisits.Size = new System.Drawing.Size(136, 42);
             this.seeVisits.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             // seeBranches
             // 
-            this.seeBranches.Location = new System.Drawing.Point(27, 175);
+            this.seeBranches.Location = new System.Drawing.Point(27, 271);
             this.seeBranches.Name = "seeBranches";
             this.seeBranches.Size = new System.Drawing.Size(136, 42);
             this.seeBranches.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // seeServices
             // 
-            this.seeServices.Location = new System.Drawing.Point(27, 79);
+            this.seeServices.Location = new System.Drawing.Point(27, 175);
             this.seeServices.Name = "seeServices";
             this.seeServices.Size = new System.Drawing.Size(136, 42);
             this.seeServices.TabIndex = 1;
@@ -109,7 +109,7 @@
             // 
             // seeClients
             // 
-            this.seeClients.Location = new System.Drawing.Point(27, 31);
+            this.seeClients.Location = new System.Drawing.Point(27, 79);
             this.seeClients.Name = "seeClients";
             this.seeClients.Size = new System.Drawing.Size(136, 42);
             this.seeClients.TabIndex = 0;

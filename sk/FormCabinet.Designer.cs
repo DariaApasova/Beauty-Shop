@@ -56,6 +56,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.addNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -140,14 +141,14 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(74, 53);
+            this.comboBox4.Location = new System.Drawing.Point(73, 56);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(157, 24);
             this.comboBox4.TabIndex = 15;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(302, 82);
+            this.button2.Location = new System.Drawing.Point(356, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 31);
             this.button2.TabIndex = 14;
@@ -156,17 +157,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(228, 83);
+            this.button1.Location = new System.Drawing.Point(239, 87);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 30);
+            this.button1.Size = new System.Drawing.Size(96, 30);
             this.button1.TabIndex = 13;
-            this.button1.Text = "ОК";
+            this.button1.Text = "Применить";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(443, 88);
+            this.checkBox1.Location = new System.Drawing.Point(9, 89);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 12;
@@ -176,15 +177,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(356, 53);
+            this.comboBox1.Location = new System.Drawing.Point(490, 22);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(269, 24);
+            this.comboBox1.Size = new System.Drawing.Size(255, 24);
             this.comboBox1.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(237, 56);
+            this.label6.Location = new System.Drawing.Point(371, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 17);
             this.label6.TabIndex = 10;
@@ -193,7 +194,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 56);
+            this.label3.Location = new System.Drawing.Point(6, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 4;
@@ -201,7 +202,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(661, 23);
+            this.numericUpDown2.Location = new System.Drawing.Point(476, 58);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(84, 22);
             this.numericUpDown2.TabIndex = 9;
@@ -209,7 +210,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(622, 28);
+            this.label5.Location = new System.Drawing.Point(446, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 17);
             this.label5.TabIndex = 8;
@@ -217,7 +218,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(522, 24);
+            this.numericUpDown1.Location = new System.Drawing.Point(355, 58);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(85, 22);
             this.numericUpDown1.TabIndex = 7;
@@ -225,7 +226,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(329, 27);
+            this.label4.Location = new System.Drawing.Point(236, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 6;
@@ -235,7 +236,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(203, 25);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 22);
+            this.textBox2.Size = new System.Drawing.Size(162, 22);
             this.textBox2.TabIndex = 3;
             // 
             // label2
@@ -306,11 +307,21 @@
             this.button6.Text = "Назад";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // addNew
+            // 
+            this.addNew.Location = new System.Drawing.Point(591, 633);
+            this.addNew.Name = "addNew";
+            this.addNew.Size = new System.Drawing.Size(131, 32);
+            this.addNew.TabIndex = 17;
+            this.addNew.Text = "Добавить новый";
+            this.addNew.UseVisualStyleBackColor = true;
+            // 
             // FormCabinet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 677);
+            this.Controls.Add(this.addNew);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label9);
@@ -360,5 +371,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn notes;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_branch;
         private System.Windows.Forms.DataGridViewButtonColumn select;
+        private System.Windows.Forms.Button addNew;
     }
 }

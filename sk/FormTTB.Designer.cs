@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.id_ttb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,9 +55,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,14 +64,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.id_ttb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,9 +87,45 @@
             this.dataGridView2.Size = new System.Drawing.Size(745, 520);
             this.dataGridView2.TabIndex = 1;
             // 
+            // id_ttb
+            // 
+            this.id_ttb.HeaderText = "Номер расписания";
+            this.id_ttb.Name = "id_ttb";
+            // 
+            // countBranch
+            // 
+            this.countBranch.HeaderText = "В филиалах";
+            this.countBranch.Name = "countBranch";
+            // 
+            // date_start
+            // 
+            this.date_start.HeaderText = "Дата начала";
+            this.date_start.Name = "date_start";
+            // 
+            // time_start
+            // 
+            this.time_start.HeaderText = "Время открытия";
+            this.time_start.Name = "time_start";
+            // 
+            // time_end
+            // 
+            this.time_end.HeaderText = "Время закрытия";
+            this.time_end.Name = "time_end";
+            // 
+            // date_end
+            // 
+            this.date_end.HeaderText = "Дата окончания";
+            this.date_end.Name = "date_end";
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Выбрать";
+            this.select.Name = "select";
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label11);
@@ -107,9 +143,7 @@
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
@@ -120,10 +154,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(596, 711);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 35);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Создать новое";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(346, 141);
+            this.checkBox1.Location = new System.Drawing.Point(528, 127);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 22;
@@ -133,9 +176,9 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 139);
+            this.comboBox2.Location = new System.Drawing.Point(148, 138);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 24);
+            this.comboBox2.Size = new System.Drawing.Size(314, 24);
             this.comboBox2.TabIndex = 21;
             // 
             // label11
@@ -149,20 +192,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(630, 59);
+            this.button2.Location = new System.Drawing.Point(499, 75);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 33);
+            this.button2.Size = new System.Drawing.Size(98, 33);
             this.button2.TabIndex = 19;
             this.button2.Text = "Сбросить";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(526, 59);
+            this.button1.Location = new System.Drawing.Point(620, 75);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 35);
+            this.button1.Size = new System.Drawing.Size(98, 35);
             this.button1.TabIndex = 18;
-            this.button1.Text = "ОК";
+            this.button1.Text = "Применить";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -261,28 +304,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Дата окончания от";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(431, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 22);
-            this.textBox3.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(401, 26);
+            this.label3.Location = new System.Drawing.Point(480, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "до";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(245, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 22);
-            this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
@@ -311,7 +340,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(127, 712);
+            this.button6.Location = new System.Drawing.Point(21, 712);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(76, 32);
             this.button6.TabIndex = 8;
@@ -320,7 +349,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(283, 712);
+            this.button7.Location = new System.Drawing.Point(209, 712);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 32);
             this.button7.TabIndex = 9;
@@ -330,7 +359,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(388, 720);
+            this.label10.Location = new System.Drawing.Point(330, 720);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(107, 17);
             this.label10.TabIndex = 10;
@@ -339,7 +368,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(510, 713);
+            this.comboBox1.Location = new System.Drawing.Point(443, 717);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 11;
@@ -347,60 +376,31 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(210, 717);
+            this.comboBox3.Location = new System.Drawing.Point(120, 717);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(67, 24);
             this.comboBox3.TabIndex = 12;
             // 
-            // button3
+            // dateTimePicker1
             // 
-            this.button3.Location = new System.Drawing.Point(556, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 35);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Создать новое";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(217, 22);
+            this.dateTimePicker1.TabIndex = 23;
             // 
-            // id_ttb
+            // dateTimePicker2
             // 
-            this.id_ttb.HeaderText = "Номер расписания";
-            this.id_ttb.Name = "id_ttb";
-            // 
-            // countBranch
-            // 
-            this.countBranch.HeaderText = "В филиалах";
-            this.countBranch.Name = "countBranch";
-            // 
-            // date_start
-            // 
-            this.date_start.HeaderText = "Дата начала";
-            this.date_start.Name = "date_start";
-            // 
-            // time_start
-            // 
-            this.time_start.HeaderText = "Время открытия";
-            this.time_start.Name = "time_start";
-            // 
-            // time_end
-            // 
-            this.time_end.HeaderText = "Время закрытия";
-            this.time_end.Name = "time_end";
-            // 
-            // date_end
-            // 
-            this.date_end.HeaderText = "Дата окончания";
-            this.date_end.Name = "date_end";
-            // 
-            // select
-            // 
-            this.select.HeaderText = "Выбрать";
-            this.select.Name = "select";
+            this.dateTimePicker2.Location = new System.Drawing.Point(528, 24);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(211, 22);
+            this.dateTimePicker2.TabIndex = 24;
             // 
             // FormTTB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 751);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label10);
@@ -436,9 +436,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -458,5 +456,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time_end;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
         private System.Windows.Forms.DataGridViewButtonColumn select;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

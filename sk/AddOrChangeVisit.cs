@@ -16,10 +16,5 @@ namespace sk
         {
             InitializeComponent();
         }
-
-        private void AddOrChangeVisit_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
