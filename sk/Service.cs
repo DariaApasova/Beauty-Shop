@@ -18,6 +18,8 @@ namespace sk
         public string  duration { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Worker> Workers { get; set; } = new List<Worker>();
+        public List<Visit> Visits { get; set; } = new List<Visit>();
         public List<Cabinet> Cabinets { get; set; } = new List<Cabinet>();
         public Service()
         {
@@ -36,6 +38,8 @@ namespace sk
     class ServiceContext:DbContext
     {
         public ServiceContext() : base("EducationDB"){ }
+        public DbSet<Visit> Visits { get; set; }
+        public DbSet<Worker> Workers { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Cabinet> Cabinets { get; set; }
     }

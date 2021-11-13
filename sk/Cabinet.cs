@@ -45,10 +45,7 @@ namespace sk
                     var  t = cc.Cabinets.Include(x => x.Services).ToList();
                     foreach(Cabinet cab in t)
                     {
-                        int n = cab.Services.Count();
-                        
-                       
-                            
+                        int n = cab.Services.Count();           
                     }
                 }
             }

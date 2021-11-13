@@ -13,20 +13,23 @@ namespace sk
         public Client client { get; set; }
         public Branch branch { get; set; }
         public DateTime date_visit { get; set; }
-        public DateTime duration { get; set; }
+        public string duration { get; set; }
         public decimal price { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Service> Services { get; set; } = new List<Service>();
+        public List<Worker> Workers { get; set; } = new List<Worker>();
         public Visit()
         {
         }
     }
-    class VisitContext:DbContext
+    class VisitContext : DbContext
     {
         public VisitContext() : base("EducationDB") { }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Service> Services { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Visit> Visits { get; set; }
-        
     }
 }
