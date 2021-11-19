@@ -207,7 +207,6 @@
             this.label2.Size = new System.Drawing.Size(25, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "ID:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -217,7 +216,6 @@
             this.label1.Size = new System.Drawing.Size(39, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Имя:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox4
             // 

@@ -13,6 +13,7 @@ namespace sk
     public partial class FormWorker : Form
     {
         string check;
+        int curid;
         Dictionary<int, Worker> dict = WorkersCache.getCache();
         public FormWorker(string check1)
         {
@@ -38,6 +39,20 @@ namespace sk
                     dataGridView1[4, r].Value = w.notes;
                     r++;
                 }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int t = e.RowIndex;
+                var h = dataGridView1.Rows[t].Cells[0].Value;
+                curid = Convert.ToInt32(h);
+            }
+            Worker see = dict[curid];
+            SeeWorker form = new SeeWorker(see);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+
         }
     }
 }

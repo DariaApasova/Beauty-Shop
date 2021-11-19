@@ -31,7 +31,8 @@ namespace sk
             textBox3.Enabled = false;
             richTextBox1.Text = client1.notes;
             richTextBox1.Enabled = false;
-            //  fillStatistics();
+            textBox4.Enabled = false;
+            textBox4.Text = Convert.ToString(client1.Visits.Count());
         }
         private void change_CLick(object sender, EventArgs e)
         {

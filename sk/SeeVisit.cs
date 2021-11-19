@@ -30,8 +30,19 @@ namespace sk
             textBox4.Text = l[1];
             textBox5.Text = Convert.ToString(visit.duration);
             textBox6.Text = Convert.ToString(visit.price);
-          //  int n = visit.Services.Count();
-            textBox7.Text = Convert.ToString(visit.Services.Count());
+            using (VisitContext vc = new VisitContext())
+            {
+                var vis = vc.Visits.Include("Services").ToList();
+                foreach(Visit v in vis)
+                {
+                    if(v.id==visit.id)
+                    {
+                        textBox7.Text = Convert.ToString(v.Services.Count());
+                    }
+                }
+            }
+                //  int n = visit.Services.Count();
+               
             textBox8.Text = visit.branch.name;
             richTextBox1.Text = visit.notes;
 

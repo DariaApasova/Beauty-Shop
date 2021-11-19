@@ -14,6 +14,7 @@ namespace sk
         public string phone { get; set; }
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
+        public List<Visit> Visits { get; set; } = new List<Visit>();
         public Client()
         {
 
@@ -34,6 +35,7 @@ namespace sk
     class ClientContext:DbContext
     {
         public ClientContext():base("EducationDB"){ }
+        public DbSet<Visit> Visits { get; set; }
         public DbSet<Client> Clients { get; set; }
     }
       static  class  ClientsCache
@@ -49,6 +51,11 @@ namespace sk
                     foreach (Client c in clients)
                     {
                         allClients.Add(c.id, c);
+                    }
+                    var t = cc.Clients.Include(x => x.Visits).ToList();
+                    foreach(Client c in t)
+                    {
+                        int n = c.Visits.Count();
                     }
                 }
             }

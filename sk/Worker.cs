@@ -17,14 +17,15 @@ namespace sk
         public DateTime date_delete { get; set; }
         public List<Service> Services { get; set; } = new List<Service>();
         public List<Visit> Visits { get; set; } = new List<Visit>();
+        public List<Cabinet> Cabinets { get; set; } = new List<Cabinet>();
         public Worker()
         {
-
         }
     }
     class WorkerContext:DbContext
     {
         public WorkerContext():base("EducationDB") { }
+        public DbSet<Cabinet> Cabinets { get; set; }
         public DbSet <Service> Services { get; set; }
         public DbSet <Visit> Visits { get; set; }
         public DbSet<Worker> Workers { get; set; } 
@@ -43,12 +44,11 @@ namespace sk
                     {
                         allWorkers.Add(s.id, s);
                     }
-                   /* var wo = wc.Workers.Include(x => x.Services).ToList();
+                    var wo = wc.Workers.Include(x => x.Services).ToList();
                     foreach(Worker r in wo)
                     {
                         int n = r.Services.Count();
-                        int y = r.Visits.Count();
-                    }*/
+                    }
                 }
             }
             return allWorkers;

@@ -19,6 +19,7 @@ namespace sk
         public DateTime date_delete { get; set; }
         public List<Service> Services { get; set; } = new List<Service>();
         public List<Worker> Workers { get; set; } = new List<Worker>();
+        public List<Cabinet> Cabinets { get; set; } = new List<Cabinet>();
         public Visit()
         {
         }
@@ -26,6 +27,7 @@ namespace sk
     class VisitContext : DbContext
     {
         public VisitContext() : base("EducationDB") { }
+        public DbSet<Cabinet> Cabinets { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Client> Clients { get; set; }

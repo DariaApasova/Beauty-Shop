@@ -16,6 +16,8 @@ namespace sk
         public string notes { get; set; }
         public DateTime date_delete { get; set; }
         public List<Service>Services { get; set; } =new List<Service>();
+        public List<Visit> Visits { get; set; } = new List<Visit>();
+        public List<Worker> Workers { get; set; } = new List<Worker>();
         public Cabinet()
         {
 
@@ -25,6 +27,8 @@ namespace sk
     {
         public CabinetsContext() : base("EducationDB") { }
         public DbSet<Branch> Branches { get; set; }
+        public DbSet<Visit> Visits { get; set; }
+        public DbSet<Worker> Workers { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Cabinet> Cabinets { get; set; }
     }
