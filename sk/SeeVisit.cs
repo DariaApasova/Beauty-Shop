@@ -13,6 +13,7 @@ namespace sk
     public partial class SeeVisit : Form
     {
         Visit visit=new Visit();
+        Dictionary<int, Attendance> att = AttendanceCache.lstWorkers();
         public SeeVisit(Visit t)
         {
             InitializeComponent();
@@ -30,19 +31,22 @@ namespace sk
             textBox4.Text = l[1];
             textBox5.Text = Convert.ToString(visit.duration);
             textBox6.Text = Convert.ToString(visit.price);
-            using (VisitContext vc = new VisitContext())
+            int count = 0;
+            dataGridView1.Rows.Clear();
+            int r = 0;
+            foreach(Attendance a in att.Values)
             {
-                var vis = vc.Visits.Include("Services").ToList();
-                foreach(Visit v in vis)
+                if (a.visit.id == visit.id)
                 {
-                    if(v.id==visit.id)
-                    {
-                        textBox7.Text = Convert.ToString(v.Services.Count());
-                    }
+                    count++;
+                    dataGridView1[0, r].Value = a.service.title;
+                    dataGridView1[1, r].Value = a.worker.name;
+                    dataGridView1[2, r].Value = a.cabinet.cabinet_name;
+                    dataGridView1[3, r].Value = a.price;
+                    r++;
                 }
             }
-                //  int n = visit.Services.Count();
-               
+            textBox7.Text = Convert.ToString(count);
             textBox8.Text = visit.branch.name;
             richTextBox1.Text = visit.notes;
 
