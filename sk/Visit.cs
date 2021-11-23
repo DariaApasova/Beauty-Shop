@@ -20,6 +20,7 @@ namespace sk
         public List<Service> Services { get; set; } = new List<Service>();
         public List<Worker> Workers { get; set; } = new List<Worker>();
         public List<Cabinet> Cabinets { get; set; } = new List<Cabinet>();
+     //   public List<Client> Clients { get; set; } = new List<Client>();
         public Visit()
         {
         }

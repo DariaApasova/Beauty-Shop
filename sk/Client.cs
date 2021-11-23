@@ -41,6 +41,7 @@ namespace sk
       static  class  ClientsCache
     {
         private static Dictionary<int, Client> allClients= new Dictionary<int, Client>();
+        private static Dictionary<int, int> allvisits = new Dictionary<int, int>();
         public static Dictionary<int, Client> getCache()
         {
             if(allClients.Count==0)
@@ -73,6 +74,20 @@ namespace sk
                 }
             }
             return allClients;
+        }
+        public static Dictionary <int, int> getOrders()
+        {
+            allvisits.Clear();
+            using (ClientContext cc = new ClientContext())
+            {
+                var t = cc.Clients.Include(x => x.Visits).ToList();
+                foreach (Client c in t)
+                {
+                    allvisits.Add(c.id, c.Visits.Count());
+                }
+
+            }
+            return allvisits;
         }
     }
 }

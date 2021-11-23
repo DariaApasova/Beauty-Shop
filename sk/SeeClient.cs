@@ -32,6 +32,17 @@ namespace sk
             richTextBox1.Text = client1.notes;
             richTextBox1.Enabled = false;
             textBox4.Enabled = false;
+            int count = 0;
+            Dictionary<int, int> lst = ClientsCache.getOrders();
+            foreach(KeyValuePair<int,int> kv in lst)
+            {
+                if(kv.Key==client1.id)
+                {
+                    count = kv.Value;
+                }
+            }
+            textBox4.Text = Convert.ToString(count);
+            //Даша, милая, ты закончила на подгрузке листа в классе клиента
             
         }
         private void change_CLick(object sender, EventArgs e)
