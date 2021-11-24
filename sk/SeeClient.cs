@@ -42,7 +42,6 @@ namespace sk
                 }
             }
             textBox4.Text = Convert.ToString(count);
-            //Даша, милая, ты закончила на подгрузке листа в классе клиента
             
         }
         private void change_CLick(object sender, EventArgs e)

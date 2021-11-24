@@ -62,6 +62,11 @@ namespace sk
                     {
                         int n = s.Cabinets.Count();
                     }
+                    var d = sc.Services.Include(x => x.Workers).ToList();
+                    foreach(Service s in d)
+                    {
+                        int t = s.Workers.Count();
+                    }
                 }
             }
             return allServices;

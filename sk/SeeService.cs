@@ -33,7 +33,21 @@ namespace sk
             textBox4.Enabled = false;
             richTextBox1.Text = service1.notes;
             richTextBox1.Enabled = false;
+            textBox7.Enabled = false;
             textBox7.Text = Convert.ToString(service1.Cabinets.Count());
+            textBox6.Enabled = false;
+            textBox6.Text = Convert.ToString(service1.Workers.Count());
+            int count = 0;
+            Dictionary<int, Attendance> lst = AttendanceCache.lstWorkers();
+            foreach(Attendance a in lst.Values)
+            {
+                if(a.service.id==service1.id)
+                {
+                    count++;
+                }
+            }
+            textBox5.Enabled = false;
+            textBox5.Text = Convert.ToString(count);
         }
         private void change_CLick(object sender, EventArgs e)
         {
