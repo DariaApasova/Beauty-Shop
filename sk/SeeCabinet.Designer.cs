@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -47,39 +49,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete_service = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.id_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(2, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -88,6 +67,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
@@ -101,9 +81,28 @@
             this.tabPage1.Text = "Кабинет";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(524, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 36);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Просмотр услуг";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(556, 216);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 36);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Удалить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(551, 180);
+            this.button2.Location = new System.Drawing.Point(381, 216);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 36);
             this.button2.TabIndex = 3;
@@ -255,139 +254,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // tabPage2
+            // button4
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(808, 276);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Услуги";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_service,
-            this.title,
-            this.price,
-            this.duration,
-            this.note,
-            this.delete_service});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 270);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // id_service
-            // 
-            this.id_service.HeaderText = "Номер услуги";
-            this.id_service.Name = "id_service";
-            // 
-            // title
-            // 
-            this.title.HeaderText = "Наименование";
-            this.title.Name = "title";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Стоимость";
-            this.price.Name = "price";
-            // 
-            // duration
-            // 
-            this.duration.HeaderText = "Продолжительность";
-            this.duration.Name = "duration";
-            // 
-            // note
-            // 
-            this.note.HeaderText = "Примечания";
-            this.note.Name = "note";
-            // 
-            // delete_service
-            // 
-            this.delete_service.HeaderText = "Удалить";
-            this.delete_service.Name = "delete_service";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(808, 276);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Занятость";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_visit,
-            this.name_c,
-            this.date_time,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(645, 270);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // id_visit
-            // 
-            this.id_visit.HeaderText = "Номер посещения";
-            this.id_visit.Name = "id_visit";
-            // 
-            // name_c
-            // 
-            this.name_c.HeaderText = "Номер клиента";
-            this.name_c.Name = "name_c";
-            // 
-            // date_time
-            // 
-            this.date_time.HeaderText = "Дата и время";
-            this.date_time.Name = "date_time";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Продолжительность";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Стоимость";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Примечания";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(692, 180);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Удалить";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(404, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 63);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Добавить услугу в кабинет";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(342, 156);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(154, 36);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Просмотр занятости";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // SeeCabinet
             // 
@@ -403,10 +278,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,23 +303,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_service;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn note;
-        private System.Windows.Forms.DataGridViewButtonColumn delete_service;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_visit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_c;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }

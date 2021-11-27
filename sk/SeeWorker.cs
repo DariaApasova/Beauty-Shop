@@ -49,5 +49,19 @@ namespace sk
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormVisit form = new FormVisit("Details");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormService form = new FormService("Details");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
     }
 }

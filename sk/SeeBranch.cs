@@ -50,5 +50,12 @@ namespace sk
             textBox5.Text = Convert.ToString(count);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCabinet form = new FormCabinet("details");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
     }
 }

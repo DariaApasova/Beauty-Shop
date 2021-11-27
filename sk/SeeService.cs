@@ -55,5 +55,12 @@ namespace sk
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormWorker form = new FormWorker("Details");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
     }
 }
