@@ -28,7 +28,8 @@ namespace sk
         }
         private void seeCabinets_Click(object sender, EventArgs e)
         {
-            FormCabinet form = new FormCabinet(check);
+            Branch b = new Branch();
+            FormCabinet form = new FormCabinet(check, 0);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
@@ -40,13 +41,13 @@ namespace sk
         }
         private void seeServices_Click(object sender, EventArgs e)
         {
-            FormService form = new FormService(check);
+            FormService form = new FormService(check, 0);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
         private void seeVisits_Click(object sender, EventArgs e)
         {
-            FormVisit form = new FormVisit(check);
+            FormVisit form = new FormVisit(check,0);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

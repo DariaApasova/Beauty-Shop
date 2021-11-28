@@ -53,7 +53,7 @@ namespace sk
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormCabinet form = new FormCabinet("details");
+            FormCabinet form = new FormCabinet("detBranch", b.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

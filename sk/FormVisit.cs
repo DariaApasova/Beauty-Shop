@@ -15,7 +15,7 @@ namespace sk
     {
         string check;
         int curid;
-        public FormVisit(string check1)
+        public FormVisit(string check1, int id)
         {
             InitializeComponent();
             check = check1;

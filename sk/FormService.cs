@@ -12,15 +12,16 @@ namespace sk
 {
     public partial class FormService : Form
     {
-        string check;
+        string check="";
         int idChange;
-        Service s;
         Dictionary<int, Service> dict = ServicesCache.getCache();
         int curid;
-        public FormService(string check1)
+        Cabinet cab = new Cabinet();
+        public FormService(string check1, int idd)
         {
             InitializeComponent();
             check = check1;
+            curid = idd;
             load();
         }
         private void load()
@@ -28,19 +29,45 @@ namespace sk
             if (check == "see")
             {
                 dataGridView1.Columns[5].Visible = false;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.Rows.Clear();
+                int r = 0;
+                foreach (Service s in dict.Values)
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1[0, r].Value = s.id;
+                    dataGridView1[1, r].Value = s.title;
+                    dataGridView1[2, r].Value = s.price;
+                    dataGridView1[3, r].Value = s.duration;
+                    dataGridView1[4, r].Value = s.notes;
+                    r++;
+                }
             }
-            dataGridView1.Rows.Clear();
-            int r = 0;
-            foreach (Service s in dict.Values)
+            if(check=="detCabinet")
             {
-                dataGridView1.Rows.Add();
-                dataGridView1[0, r].Value = s.id;
-                dataGridView1[1, r].Value = s.title;
-                dataGridView1[2, r].Value = s.price;
-                dataGridView1[3, r].Value = s.duration;
-                dataGridView1[4, r].Value = s.notes;
-                r++;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.Rows.Clear();
+                int r = 0;
+                Dictionary<int, Cabinet> dictc = CabinetsCache.getCache();
+                foreach(Cabinet c in dictc.Values)
+                {
+                    if(c.id==curid)
+                    {
+                        foreach (Service s in c.Services.ToList())
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1[0, r].Value = s.id;
+                            dataGridView1[1, r].Value = s.title;
+                            dataGridView1[2, r].Value = s.price;
+                            dataGridView1[3, r].Value = s.duration;
+                            dataGridView1[4, r].Value = s.notes;
+                            r++;
+                        }
+                    }
+                }
             }
+           
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -65,7 +92,7 @@ namespace sk
            // curid = services.getMaxID() + 1;
             Service serv = new Service();
             serv.id = curid;
-            s.addService(serv);
+           // s.addService(serv);
             AddOrChangeService form = new AddOrChangeService(serv, "add");
             form.StartPosition = FormStartPosition.CenterScreen;
             form.FormClosing+=new FormClosingEventHandler(formCLosed);

@@ -49,14 +49,14 @@ namespace sk
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormVisit form = new FormVisit("Details");
+            FormVisit form = new FormVisit("detCabinet", c.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormService form = new FormService("Details");
+            FormService form = new FormService("detCabinet", c.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
