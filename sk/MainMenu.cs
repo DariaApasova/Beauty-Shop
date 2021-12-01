@@ -53,7 +53,7 @@ namespace sk
         }
         private void seeWorkers_Click(object sender, EventArgs e)
         {
-            FormWorker form = new FormWorker(check);
+            FormWorker form = new FormWorker(check, 0);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

@@ -58,7 +58,7 @@ namespace sk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormWorker form = new FormWorker("Details");
+            FormWorker form = new FormWorker("detService", service1.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

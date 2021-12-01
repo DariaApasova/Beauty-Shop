@@ -67,6 +67,30 @@ namespace sk
                     }
                 }
             }
+            if(check=="detWorker")
+            {
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.Rows.Clear();
+                int r = 0;
+                Dictionary<int, Worker> lst = WorkersCache.getCache();
+                foreach(Worker w in lst.Values)
+                {
+                    if(w.id==curid)
+                    {
+                        foreach(Service s in w.Services.ToList())
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1[0, r].Value = s.id;
+                            dataGridView1[1, r].Value = s.title;
+                            dataGridView1[2, r].Value = s.price;
+                            dataGridView1[3, r].Value = s.duration;
+                            dataGridView1[4, r].Value = s.notes;
+                            r++;
+                        }
+                    }
+                }
+            }
            
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
