@@ -71,7 +71,8 @@ namespace sk
             service1.date_delete = Convert.ToDateTime("31.12.9999 12:00:00");
             using (ServiceContext sc = new ServiceContext())
             {
-                Service s1 = new Service { id = curid, title = title.Text, price = Convert.ToDecimal(price.Text), duration = duration.Text, notes = notes.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00")};
+                string time = convertTime(duration.Text);
+                Service s1 = new Service { id = curid, title = title.Text, price = Convert.ToDecimal(price.Text), duration = time, notes = notes.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00")};
                 if (check == "add")
                 {
                     sc.Services.Add(s1);
@@ -81,7 +82,25 @@ namespace sk
                     sc.Entry(service1).State = System.Data.Entity.EntityState.Modified;
                 }
                 sc.SaveChanges();
-                
+            }
+        }
+        private string convertTime(string t)
+        {
+            try
+            {
+                string h = Convert.ToString(TimeSpan.FromMinutes(Convert.ToDouble(duration.Text)).TotalHours);
+                string[] hh = h.Split(',');
+                string m = Convert.ToString(Convert.ToInt32(duration.Text) - (Convert.ToInt16(hh[0]) * 60));
+                if (m.Length == 1)
+                {
+                    m = $"0+{m}";
+                }
+                string time = $"0{hh[0]}:{m}:00";
+                return time;
+            }
+            catch(Exception e)
+            {
+                return t;
             }
         }
         private void save_Click(object sender, EventArgs e)
@@ -94,8 +113,6 @@ namespace sk
             string text = "Услуга успешно сохранена.";
             string caption = "Уведомление";
             MessageBox.Show(text, caption);
-
-
         }
     }
 }

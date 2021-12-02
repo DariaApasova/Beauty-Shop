@@ -81,7 +81,6 @@ namespace sk
                 {
                     if(curid==a.worker.id)
                     {
-                        int vis = a.visit.id;
                         using (VisitContext vc = new VisitContext())
                         {
                             var visits = vc.Visits.Include("Client").Include("Branch").ToList();
@@ -103,19 +102,22 @@ namespace sk
                         }
                     }
                 }
-               /* using (VisitContext vc = new VisitContext())
+            }
+            if(check=="detCabinet")
+            {
+                dataGridView2.Columns[7].Visible = false;
+                Dictionary<int, Attendance> dict = AttendanceCache.lstWorkers();
+                int r = 0;
+                foreach(Attendance a in dict.Values)
                 {
-                    dataGridView2.Rows.Clear();
-                    int r = 0;
-                    var visits = vc.Visits.Include("Client").Include("Branch").ToList();
-                    foreach (var v in visits)
+                    if(curid==a.cabinet.id)
                     {
-                        if (v.id == curid)
+                        using (VisitContext vc = new VisitContext())
                         {
-                            Dictionary<int, Attendance> dict = AttendanceCache.lstWorkers();
-                            foreach (Attendance a in dict.Values)
+                            var visits = vc.Visits.Include("CLient").Include("Branch").ToList();
+                            foreach(var v in visits)
                             {
-                                if (v.id == a.visit.id)
+                                if(a.visit.id==v.id)
                                 {
                                     dataGridView2.Rows.Add();
                                     dataGridView2[0, r].Value = v.id;
@@ -130,7 +132,7 @@ namespace sk
                             }
                         }
                     }
-                }*/
+                }
             }
            
         }

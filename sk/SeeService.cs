@@ -53,6 +53,7 @@ namespace sk
         {
             AddOrChangeService form = new AddOrChangeService(service1, "change");
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
             form.ShowDialog();
         }
 
@@ -61,6 +62,21 @@ namespace sk
             FormWorker form = new FormWorker("detService", service1.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+        }
+        void formClosing(object sender, FormClosingEventArgs e)
+        {
+            load();
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
+            service1.date_delete = Convert.ToDateTime(time);
+            using (ServiceContext sc = new ServiceContext())
+            {
+                sc.Entry(service1).State = System.Data.Entity.EntityState.Modified;
+                sc.SaveChanges();
+            }
         }
     }
 }

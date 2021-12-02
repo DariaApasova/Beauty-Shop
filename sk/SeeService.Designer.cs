@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.change = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,6 +83,16 @@
             this.tabPage1.Text = "Услуга";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(411, 293);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 39);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Просмотр мастеров";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // delete
             // 
             this.delete.Location = new System.Drawing.Point(635, 293);
@@ -91,6 +101,7 @@
             this.delete.TabIndex = 15;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // change
             // 
@@ -273,16 +284,6 @@
             this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Стоимость:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(411, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 39);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Просмотр мастеров";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SeeService
             // 

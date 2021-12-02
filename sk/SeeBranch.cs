@@ -48,6 +48,16 @@ namespace sk
             }
             textBox5.Enabled = false;
             textBox5.Text = Convert.ToString(count);
+            textBox6.Enabled = false;
+            textBox6.Text =Convert.ToString( b.timetable.id);
+            textBox7.Enabled = false;
+            textBox7.Text = b.timetable.beginning;
+            textBox8.Enabled = false;
+            textBox8.Text = b.timetable.start;
+            textBox9.Enabled = false;
+            textBox9.Text = b.timetable.end;
+            textBox10.Enabled = false;
+            textBox10.Text = b.timetable.ending;
 
         }
 

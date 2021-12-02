@@ -91,7 +91,7 @@ namespace sk
                     }
                 }
             }
-           
+  
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,23 +100,22 @@ namespace sk
                 int t = e.RowIndex;
                 var h = dataGridView1.Rows[t].Cells[0].Value;
                 idChange = Convert.ToInt16(h);
-                seeCabinet();
+                seeService();
             }
         }
-        private void seeCabinet()
+        private void seeService()
         {
             Service see = dict.FirstOrDefault(t => t.Key == idChange).Value;
             SeeService form = new SeeService(see);
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formCLosed);
             form.ShowDialog();
 
         }
         private void newService_CLick(object sender, EventArgs e)
         {
-           // curid = services.getMaxID() + 1;
             Service serv = new Service();
             serv.id = curid;
-           // s.addService(serv);
             AddOrChangeService form = new AddOrChangeService(serv, "add");
             form.StartPosition = FormStartPosition.CenterScreen;
             form.FormClosing+=new FormClosingEventHandler(formCLosed);
