@@ -34,13 +34,16 @@ namespace sk
                 int r = 0;
                 foreach (Service s in dict.Values)
                 {
-                    dataGridView1.Rows.Add();
-                    dataGridView1[0, r].Value = s.id;
-                    dataGridView1[1, r].Value = s.title;
-                    dataGridView1[2, r].Value = s.price;
-                    dataGridView1[3, r].Value = s.duration;
-                    dataGridView1[4, r].Value = s.notes;
-                    r++;
+                    if (checkBox2.Checked)
+                    {
+                        load_real(s, r);
+                        r++;
+                    }
+                    else
+                    {
+                        load_all(s, r);
+                        r++;
+                    }
                 }
             }
             if(check=="detCabinet")
@@ -56,13 +59,16 @@ namespace sk
                     {
                         foreach (Service s in c.Services.ToList())
                         {
-                            dataGridView1.Rows.Add();
-                            dataGridView1[0, r].Value = s.id;
-                            dataGridView1[1, r].Value = s.title;
-                            dataGridView1[2, r].Value = s.price;
-                            dataGridView1[3, r].Value = s.duration;
-                            dataGridView1[4, r].Value = s.notes;
-                            r++;
+                            if (checkBox2.Checked)
+                            {
+                                load_real(s, r);
+                                r++;
+                            }
+                            else
+                            {
+                                load_all(s, r);
+                                r++;
+                            }
                         }
                     }
                 }
@@ -80,18 +86,46 @@ namespace sk
                     {
                         foreach(Service s in w.Services.ToList())
                         {
-                            dataGridView1.Rows.Add();
-                            dataGridView1[0, r].Value = s.id;
-                            dataGridView1[1, r].Value = s.title;
-                            dataGridView1[2, r].Value = s.price;
-                            dataGridView1[3, r].Value = s.duration;
-                            dataGridView1[4, r].Value = s.notes;
-                            r++;
+                            if (checkBox2.Checked)
+                            {
+                                load_real(s, r);
+                                r++;
+                            }
+                            else
+                            {
+                                load_all(s, r);
+                                r++;
+                            }
                         }
                     }
                 }
             }
   
+        }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            load();
+        }
+        private void load_real(Service s, int r)
+        {
+            if (s.date_delete == Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, r].Value = s.id;
+                dataGridView1[1, r].Value = s.title;
+                dataGridView1[2, r].Value = s.price;
+                dataGridView1[3, r].Value = s.duration;
+                dataGridView1[4, r].Value = s.notes;
+            }
+        }
+        private void load_all(Service s, int r)
+        {
+            dataGridView1.Rows.Add();
+            dataGridView1[0, r].Value = s.id;
+            dataGridView1[1, r].Value = s.title;
+            dataGridView1[2, r].Value = s.price;
+            dataGridView1[3, r].Value = s.duration;
+            dataGridView1[4, r].Value = s.notes;
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -39,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.newService = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,11 +55,13 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.newService = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 171);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(668, 539);
+            this.dataGridView1.Size = new System.Drawing.Size(723, 539);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.choice_CellDoubleClick);
             // 
@@ -145,6 +146,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label10);
@@ -166,25 +168,15 @@
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Location = new System.Drawing.Point(16, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(663, 153);
+            this.groupBox2.Size = new System.Drawing.Size(719, 153);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
             // 
-            // newService
-            // 
-            this.newService.Location = new System.Drawing.Point(540, 716);
-            this.newService.Name = "newService";
-            this.newService.Size = new System.Drawing.Size(133, 34);
-            this.newService.TabIndex = 20;
-            this.newService.Text = "Создать новую";
-            this.newService.UseVisualStyleBackColor = true;
-            this.newService.Click += new System.EventHandler(this.newService_CLick);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(345, 117);
+            this.checkBox1.Location = new System.Drawing.Point(327, 117);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 19;
@@ -194,7 +186,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(139, 115);
+            this.comboBox2.Location = new System.Drawing.Point(123, 115);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(199, 24);
             this.comboBox2.TabIndex = 18;
@@ -210,7 +202,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(551, 61);
+            this.button5.Location = new System.Drawing.Point(597, 61);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 32);
             this.button5.TabIndex = 12;
@@ -219,7 +211,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(442, 61);
+            this.button3.Location = new System.Drawing.Point(467, 61);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 32);
             this.button3.TabIndex = 10;
@@ -244,7 +236,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(218, 23);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(439, 22);
+            this.textBox2.Size = new System.Drawing.Size(485, 22);
             this.textBox2.TabIndex = 5;
             // 
             // label5
@@ -313,6 +305,16 @@
             this.textBox4.Size = new System.Drawing.Size(151, 22);
             this.textBox4.TabIndex = 4;
             // 
+            // newService
+            // 
+            this.newService.Location = new System.Drawing.Point(540, 716);
+            this.newService.Name = "newService";
+            this.newService.Size = new System.Drawing.Size(133, 34);
+            this.newService.TabIndex = 20;
+            this.newService.Text = "Создать новую";
+            this.newService.UseVisualStyleBackColor = true;
+            this.newService.Click += new System.EventHandler(this.newService_CLick);
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(31, 716);
@@ -356,11 +358,22 @@
             this.comboBox3.Size = new System.Drawing.Size(76, 24);
             this.comboBox3.TabIndex = 11;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(513, 117);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(206, 21);
+            this.checkBox2.TabIndex = 20;
+            this.checkBox2.Text = "Не показывать удаленные";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // FormService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 760);
+            this.ClientSize = new System.Drawing.Size(747, 760);
             this.Controls.Add(this.newService);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox1);
@@ -414,5 +427,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button newService;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

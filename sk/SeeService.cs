@@ -48,6 +48,15 @@ namespace sk
             }
             textBox5.Enabled = false;
             textBox5.Text = Convert.ToString(count);
+            if(service1.date_delete==Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                label9.Visible = false;
+            }
+            else
+            {
+                label9.Text = "Услуга удалена";
+                delete.Visible = false;
+            }
         }
         private void change_CLick(object sender, EventArgs e)
         {
