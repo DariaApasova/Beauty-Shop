@@ -86,6 +86,9 @@ namespace sk
                 sc.Entry(service1).State = System.Data.Entity.EntityState.Modified;
                 sc.SaveChanges();
             }
+            string text = "Услуга успешно удалена.";
+            string caption = "Уведомление";
+            MessageBox.Show(text, caption);
         }
     }
 }

@@ -63,6 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -224,6 +225,7 @@
             this.button6.TabIndex = 4;
             this.button6.Text = "Удалить";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button4
             // 
@@ -290,6 +292,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.label12);
@@ -316,7 +319,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(91, 51);
+            this.textBox11.Location = new System.Drawing.Point(91, 57);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(156, 22);
             this.textBox11.TabIndex = 9;
@@ -324,7 +327,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 97);
+            this.label12.Location = new System.Drawing.Point(6, 96);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 17);
             this.label12.TabIndex = 8;
@@ -333,7 +336,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 57);
+            this.label11.Location = new System.Drawing.Point(6, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 17);
             this.label11.TabIndex = 7;
@@ -341,7 +344,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(64, 173);
+            this.textBox3.Location = new System.Drawing.Point(64, 163);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(183, 22);
             this.textBox3.TabIndex = 6;
@@ -349,7 +352,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 178);
+            this.label3.Location = new System.Drawing.Point(7, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 5;
@@ -357,7 +360,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(91, 136);
+            this.textBox2.Location = new System.Drawing.Point(91, 128);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(156, 22);
             this.textBox2.TabIndex = 4;
@@ -372,7 +375,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 141);
+            this.label2.Location = new System.Drawing.Point(7, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 17);
             this.label2.TabIndex = 1;
@@ -396,6 +399,15 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(570, 256);
             this.tabControl1.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 199);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 17);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "label13";
             // 
             // SeeBranch
             // 
@@ -454,5 +466,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label label13;
     }
 }

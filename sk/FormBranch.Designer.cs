@@ -35,7 +35,6 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.addNew = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.select_ttb = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,11 +48,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.addNew = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +105,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.select_ttb);
             this.groupBox1.Controls.Add(this.button1);
@@ -123,16 +125,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
-            // 
-            // addNew
-            // 
-            this.addNew.Location = new System.Drawing.Point(536, 596);
-            this.addNew.Name = "addNew";
-            this.addNew.Size = new System.Drawing.Size(131, 32);
-            this.addNew.TabIndex = 15;
-            this.addNew.Text = "Добавить новый";
-            this.addNew.UseVisualStyleBackColor = true;
-            this.addNew.Click += new System.EventHandler(this.addNew_Click);
             // 
             // button3
             // 
@@ -246,6 +238,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // addNew
+            // 
+            this.addNew.Location = new System.Drawing.Point(536, 596);
+            this.addNew.Name = "addNew";
+            this.addNew.Size = new System.Drawing.Size(131, 32);
+            this.addNew.TabIndex = 15;
+            this.addNew.Text = "Добавить новый";
+            this.addNew.UseVisualStyleBackColor = true;
+            this.addNew.Click += new System.EventHandler(this.addNew_Click);
+            // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
@@ -288,6 +290,17 @@
             this.button6.TabIndex = 17;
             this.button6.Text = "Назад";
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(450, 96);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(206, 21);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.Text = "Не показывать удаленные";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // FormBranch
             // 
@@ -340,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewButtonColumn select;
         private System.Windows.Forms.Button addNew;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

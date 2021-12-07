@@ -58,6 +58,15 @@ namespace sk
             textBox9.Text = b.timetable.end;
             textBox10.Enabled = false;
             textBox10.Text = b.timetable.ending;
+            if (b.date_delete == Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                label13.Visible = false;
+            }
+            else
+            {
+                label13.Text = "Услуга удалена";
+                button6.Visible = false;
+            }
 
         }
 
@@ -66,6 +75,20 @@ namespace sk
             FormCabinet form = new FormCabinet("detBranch", b.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
+            b.date_delete = Convert.ToDateTime(time);
+            using (BranchContext sc = new BranchContext())
+            {
+                sc.Entry(b).State = System.Data.Entity.EntityState.Modified;
+                sc.SaveChanges();
+            }
+            string text = "Филиал успешно удален.";
+            string caption = "Уведомление";
+            MessageBox.Show(text, caption);
         }
     }
 }
