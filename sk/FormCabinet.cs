@@ -12,6 +12,7 @@ namespace sk
 {
     public partial class FormCabinet : Form
     {
+
         string check = "";
         int id;
         Dictionary<int, Cabinet> dict = CabinetsCache.getCache();

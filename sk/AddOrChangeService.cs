@@ -82,6 +82,7 @@ namespace sk
                     sc.Entry(service1).State = System.Data.Entity.EntityState.Modified;
                 }
                 sc.SaveChanges();
+                ServicesCache.updateCache();
             }
         }
         private string convertTime(string t)

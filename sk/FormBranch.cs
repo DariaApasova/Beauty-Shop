@@ -74,7 +74,8 @@ namespace sk
         }
         private void addNew_Click(object sender, EventArgs e)
         {
-            AddOrChangeBranch form = new AddOrChangeBranch();
+            Branch newb = new Branch();
+            AddOrChangeBranch form = new AddOrChangeBranch(newb, "add");
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }
@@ -93,8 +94,13 @@ namespace sk
             Branch see = dict.FirstOrDefault(t => t.Key == idChange).Value;
             SeeBranch form = new SeeBranch(see);
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
             form.ShowDialog();
-
         }
+        void formClosing(object sender, FormClosingEventArgs e)
+        {
+            load();
+        }
+
     }
 }

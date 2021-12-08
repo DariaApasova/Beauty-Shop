@@ -45,6 +45,15 @@ namespace sk
             textBox6.Text = Convert.ToString(count);
             textBox5.Enabled = false;
             textBox5.Text = Convert.ToString(c.Services.Count);
+            if (c.date_delete == Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                label8.Visible = false;
+            }
+            else
+            {
+                label8.Text = "Услуга удалена";
+                button3.Visible = false;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -59,6 +68,20 @@ namespace sk
             FormService form = new FormService("detCabinet", c.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
+            c.date_delete = Convert.ToDateTime(time);
+            using (CabinetsContext sc = new CabinetsContext())
+            {
+                sc.Entry(c).State = System.Data.Entity.EntityState.Modified;
+                sc.SaveChanges();
+            }
+            string text = "Кабинет успешно удален.";
+            string caption = "Уведомление";
+            MessageBox.Show(text, caption);
         }
     }
 }

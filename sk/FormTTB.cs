@@ -12,6 +12,7 @@ namespace sk
 {
     public partial class FormTTB : Form
     {
+        int num;
         string check;
         public FormTTB(string check1)
         {
@@ -24,6 +25,10 @@ namespace sk
             if(check=="see")
             {
                 dataGridView2.Columns[6].Visible = false;
+            }
+            if(check=="choose")
+            {
+                dataGridView2.Columns[6].Visible = true;
             }
             using (TTBContext timetableb = new TTBContext())
             {
@@ -53,5 +58,16 @@ namespace sk
                 }
             }
         }
+
+       /* private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==6)
+            {
+                int t = e.RowIndex;
+                var h = dataGridView2.Rows[t].Cells[0].Value;
+                num = Convert.ToInt16(h);
+            }
+            
+        }*/
     }
 }

@@ -90,5 +90,17 @@ namespace sk
             string caption = "Уведомление";
             MessageBox.Show(text, caption);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddOrChangeBranch form = new AddOrChangeBranch(b, "change");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
+            form.ShowDialog();
+        }
+        void formClosing(object sender, FormClosingEventArgs e)
+        {
+            load();
+        }
     }
 }

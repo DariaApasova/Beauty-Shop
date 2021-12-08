@@ -37,7 +37,8 @@
             this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,13 +60,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -154,14 +154,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
             // 
-            // button3
+            // dateTimePicker2
             // 
-            this.button3.Location = new System.Drawing.Point(596, 711);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 35);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Создать новое";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dateTimePicker2.Location = new System.Drawing.Point(528, 24);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(211, 22);
+            this.dateTimePicker2.TabIndex = 24;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(217, 22);
+            this.dateTimePicker1.TabIndex = 23;
             // 
             // checkBox1
             // 
@@ -338,6 +343,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(596, 711);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 35);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Создать новое";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(21, 712);
@@ -380,20 +394,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(67, 24);
             this.comboBox3.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(245, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(217, 22);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(528, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(211, 22);
-            this.dateTimePicker2.TabIndex = 24;
             // 
             // FormTTB
             // 
