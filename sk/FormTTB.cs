@@ -12,7 +12,7 @@ namespace sk
 {
     public partial class FormTTB : Form
     {
-        int num;
+        public int num;
         string check;
         public FormTTB(string check1)
         {
@@ -32,6 +32,7 @@ namespace sk
             }
             using (TTBContext timetableb = new TTBContext())
             {
+                dataGridView2.ReadOnly = true;
                 dataGridView2.Rows.Clear();
                 var ttb = timetableb.TTBs;
                 int r = 0;
@@ -58,16 +59,15 @@ namespace sk
                 }
             }
         }
-
-       /* private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex==6)
             {
                 int t = e.RowIndex;
-                var h = dataGridView2.Rows[t].Cells[0].Value;
-                num = Convert.ToInt16(h);
+                var n =dataGridView2.Rows[t].Cells[0].Value;
+                num = Convert.ToInt16(n);
             }
-            
-        }*/
+            Close();
+        }
     }
 }

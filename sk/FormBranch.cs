@@ -60,11 +60,11 @@ namespace sk
         }
         private void load_all(Branch b, int r)
         {
-            dataGridView1.Rows.Add();
-            dataGridView1[0, r].Value = b.id;
-            dataGridView1[1, r].Value = b.timetable.id;
-            dataGridView1[2, r].Value = b.name;
-            dataGridView1[3, r].Value = b.address;
+                dataGridView1.Rows.Add();
+                dataGridView1[0, r].Value = b.id;
+                dataGridView1[1, r].Value = b.timetable.id;
+                dataGridView1[2, r].Value = b.name;
+                dataGridView1[3, r].Value = b.address;
         }
         private void select_ttb_Click(object sender, EventArgs e)
         {
@@ -99,6 +99,7 @@ namespace sk
         }
         void formClosing(object sender, FormClosingEventArgs e)
         {
+            BranchCache.updateCache();
             load();
         }
 

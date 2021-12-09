@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -40,7 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -73,7 +71,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.textBox10);
             this.tabPage2.Controls.Add(this.textBox9);
             this.tabPage2.Controls.Add(this.textBox8);
@@ -84,7 +81,6 @@
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -92,15 +88,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Расписание";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(316, 75);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(88, 52);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Выбрать из списка";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // textBox10
             // 
@@ -181,15 +168,6 @@
             this.label6.Size = new System.Drawing.Size(105, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Id расписания:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(435, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Изменить";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -433,7 +411,6 @@
         #endregion
 
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
@@ -444,7 +421,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;

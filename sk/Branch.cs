@@ -55,10 +55,15 @@ namespace sk
             allBranches.Clear();
             using (BranchContext dc = new BranchContext())
             {
-                var branches = dc.Branches;
+                var branches = dc.Branches.Include(x=>x.timetable).ToList();
                 foreach (Branch b in branches)
                 {
                     allBranches.Add(b.id, b);
+                }
+                var br = dc.Branches.Include(x => x.Cabinets).ToList();
+                foreach(Branch b in br)
+                {
+                    int n = b.Cabinets.Count();
                 }
             }
             return allBranches;
