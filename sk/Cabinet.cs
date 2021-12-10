@@ -65,6 +65,11 @@ namespace sk
                 {
                     allCabinets.Add(ca.id, ca);
                 }
+                var t = cc.Cabinets.Include(x => x.Services).ToList();
+                foreach(Cabinet cab in t)
+                {
+                    int n = cab.Services.Count();
+                }
             }
             return allCabinets;
         }

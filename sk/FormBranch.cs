@@ -12,6 +12,7 @@ namespace sk
 {
     public partial class FormBranch : Form
     {
+        public int num;
         string check;
         int idChange;
         Dictionary<int, Branch> dict = BranchCache.getCache();
@@ -26,6 +27,10 @@ namespace sk
             if (check=="see")
             {
                 dataGridView1.Columns[4].Visible = false;
+            }
+            if(check=="choose")
+            {
+                dataGridView1.Columns[4].Visible = true;
             }
             dataGridView1.Rows.Clear();
             int r = 0;
@@ -66,17 +71,12 @@ namespace sk
                 dataGridView1[2, r].Value = b.name;
                 dataGridView1[3, r].Value = b.address;
         }
-        private void select_ttb_Click(object sender, EventArgs e)
-        {
-            FormTTB form = new FormTTB("select");
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.ShowDialog();
-        }
         private void addNew_Click(object sender, EventArgs e)
         {
             Branch newb = new Branch();
             AddOrChangeBranch form = new AddOrChangeBranch(newb, "add");
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
             form.ShowDialog();
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -103,5 +103,15 @@ namespace sk
             load();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==4)
+            {
+                int t = e.RowIndex;
+                var n = dataGridView1.Rows[t].Cells[0].Value;
+                num = Convert.ToInt16(n);
+            }
+            Close();
+        }
     }
 }

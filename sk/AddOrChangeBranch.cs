@@ -29,7 +29,7 @@ namespace sk
         {
             if(check=="add")
             {
-               // loadNew();
+               loadNew();
             }
             if(check=="change")
             {
@@ -59,9 +59,6 @@ namespace sk
         private void save()
         {
             Branch bb = branch1;
-            branch1.name = textBox1.Text;
-            branch1.address = textBox2.Text;
-            branch1.date_delete = Convert.ToDateTime("31.12.9999 12:00:00");
             TimetableBranch b = new TimetableBranch();
             Dictionary<int, TimetableBranch> ttbs = TimetableBranchCache.getCache();
             foreach (TimetableBranch ttb in ttbs.Values)
@@ -69,23 +66,31 @@ namespace sk
                 if (ttb.id == Convert.ToInt16(label1.Text))
                 {
                     b = ttb;
-                    branch1.timetable = b;
                 }
             }
-            branch1.timetable = b;
             using (BranchContext bc = new BranchContext())
             {
-                Branch b1 = new Branch { id = curid, name = textBox1.Text, address = textBox2.Text, timetable=b,  date_delete = Convert.ToDateTime("31.12.9999 12:00:00") };
+               
                 if (check == "add")
                 {
+                    TimetableBranch tbc = bc.TTBs.Where(x => x.id == b.id).FirstOrDefault();
+                    Branch b1 = new Branch { id = curid, name = textBox1.Text, address = textBox2.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00"), timetable = tbc };
                     bc.Branches.Add(b1);
                 }
                 if (check == "change")
                 {
-                    Branch branch = bc.Branches.Where(x => x.id == branch1.id).FirstOrDefault();
-                    TimetableBranch tb = bc.TTBs.Where(x => x.id == b.id).FirstOrDefault();
-                    branch.timetable = tb;
-                   // bc.Entry(branch1).State = System.Data.Entity.EntityState.Modified;
+                    if(textBox1.Text!=branch1.name||textBox2.Text!=branch1.address)
+                    {
+                        branch1.name = textBox1.Text;
+                        branch1.address = textBox2.Text;
+                        bc.Entry(branch1).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    if(Convert.ToInt16(label1.Text)!=branch1.timetable.id)
+                    {
+                        Branch branch = bc.Branches.Where(x => x.id == branch1.id).FirstOrDefault();
+                        TimetableBranch tb = bc.TTBs.Where(x => x.id == b.id).FirstOrDefault();
+                        branch.timetable = tb;
+                    }
                 }
                 bc.SaveChanges();
                 BranchCache.updateCache();
@@ -111,7 +116,6 @@ namespace sk
             ttb = form.num;
             label1.Text = Convert.ToString(ttb);
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Close();

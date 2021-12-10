@@ -35,6 +35,7 @@
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.select_ttb = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(693, 417);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.choice_CellDoubleClick);
             // 
             // id_branch
@@ -126,6 +127,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(450, 96);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(206, 21);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.Text = "Не показывать удаленные";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(216, 91);
@@ -143,7 +155,6 @@
             this.select_ttb.TabIndex = 13;
             this.select_ttb.Text = "Выбрать";
             this.select_ttb.UseVisualStyleBackColor = true;
-            this.select_ttb.Click += new System.EventHandler(this.select_ttb_Click);
             // 
             // button1
             // 
@@ -290,17 +301,6 @@
             this.button6.TabIndex = 17;
             this.button6.Text = "Назад";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(450, 96);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(206, 21);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Не показывать удаленные";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // FormBranch
             // 

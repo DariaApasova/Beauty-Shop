@@ -36,6 +36,7 @@
             this.id_branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -116,6 +117,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -137,6 +139,17 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(476, 89);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(206, 21);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "Не показывать удаленные";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_ChechedChanged);
             // 
             // comboBox4
             // 
@@ -315,6 +328,7 @@
             this.addNew.TabIndex = 17;
             this.addNew.Text = "Добавить новый";
             this.addNew.UseVisualStyleBackColor = true;
+            this.addNew.Click += new System.EventHandler(this.addNew_Click);
             // 
             // FormCabinet
             // 
@@ -372,5 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_branch;
         private System.Windows.Forms.DataGridViewButtonColumn select;
         private System.Windows.Forms.Button addNew;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

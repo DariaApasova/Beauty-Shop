@@ -23,6 +23,10 @@ namespace sk
             id = idd;
             load();
         }
+        private void checkBox2_ChechedChanged(object sender, EventArgs e)
+        {
+            load();
+        }
         private void load()
         {
             dataGridView1.ReadOnly = true;
@@ -33,13 +37,16 @@ namespace sk
                 int r = 0;
                 foreach (Cabinet c in dict.Values)
                 {
-                    dataGridView1.Rows.Add();
-                    dataGridView1[0, r].Value = c.id;
-                    dataGridView1[1, r].Value = c.cabinet_name;
-                    dataGridView1[2, r].Value = c.capacity;
-                    dataGridView1[3, r].Value = c.notes;
-                    dataGridView1[4, r].Value = c.branch.name;
-                    r++;
+                    if(checkBox2.Checked)
+                    {
+                        load_real(c, r);
+                        r++;
+                    }
+                    else
+                    {
+                        load_all(c, r);
+                        r++;
+                    }
                 }
             }  
             if(check=="detBranch")
@@ -54,18 +61,42 @@ namespace sk
                     {
                         foreach (Cabinet c in b.Cabinets.ToList())
                         {
-                            dataGridView1.Rows.Add();
-                            dataGridView1[0, r].Value = c.id;
-                            dataGridView1[1, r].Value = c.cabinet_name;
-                            dataGridView1[2, r].Value = c.capacity;
-                            dataGridView1[3, r].Value = c.notes;
-                            dataGridView1[4, r].Value = b.name;
-                            r++;
+                            if(checkBox2.Checked)
+                            {
+                                load_real(c, r);
+                                r++;
+                            }
+                            else
+                            {
+                                load_all(c, r);
+                                r++;
+                            }
                         }
                     }
                 }
                
             }
+        }
+        private void load_real(Cabinet c, int r)
+        {
+            if(c.date_delete==Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, r].Value = c.id;
+                dataGridView1[1, r].Value = c.cabinet_name;
+                dataGridView1[2, r].Value = c.capacity;
+                dataGridView1[3, r].Value = c.notes;
+                dataGridView1[4, r].Value = c.branch.name;
+            }
+        }
+        private void load_all(Cabinet c, int r)
+        {
+            dataGridView1.Rows.Add();
+            dataGridView1[0, r].Value = c.id;
+            dataGridView1[1, r].Value = c.cabinet_name;
+            dataGridView1[2, r].Value = c.capacity;
+            dataGridView1[3, r].Value = c.notes;
+            dataGridView1[4, r].Value = c.branch.name;
         }
         private void choice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,8 +113,22 @@ namespace sk
             Cabinet see =dict.FirstOrDefault(t => t.Key == id).Value;
             SeeCabinet form = new SeeCabinet(see);
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
             form.ShowDialog();
 
+        }
+
+        private void addNew_Click(object sender, EventArgs e)
+        {
+            Cabinet newc = new Cabinet();
+            AddOrChangeCabinet form = new AddOrChangeCabinet(newc, "add");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formClosing);
+            form.ShowDialog();
+        }
+        void formClosing(object sender, FormClosingEventArgs E)
+        {
+            load();
         }
     }
 }

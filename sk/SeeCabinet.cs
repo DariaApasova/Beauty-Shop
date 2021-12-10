@@ -51,7 +51,7 @@ namespace sk
             }
             else
             {
-                label8.Text = "Услуга удалена";
+                label8.Text = "Кабинет удалена";
                 button3.Visible = false;
             }
         }
@@ -82,6 +82,18 @@ namespace sk
             string text = "Кабинет успешно удален.";
             string caption = "Уведомление";
             MessageBox.Show(text, caption);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddOrChangeCabinet form = new AddOrChangeCabinet(c, "change");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formclosing);
+            form.ShowDialog();
+        }
+        void formclosing(object sender, FormClosingEventArgs e)
+        {
+            load();
         }
     }
 }
