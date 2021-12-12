@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.id_ttb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +59,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.id_ttb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.select = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.change = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,51 +82,18 @@
             this.time_start,
             this.time_end,
             this.date_end,
-            this.select});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 186);
+            this.select,
+            this.change});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 179);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(745, 520);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // id_ttb
-            // 
-            this.id_ttb.HeaderText = "Номер расписания";
-            this.id_ttb.Name = "id_ttb";
-            // 
-            // countBranch
-            // 
-            this.countBranch.HeaderText = "В филиалах";
-            this.countBranch.Name = "countBranch";
-            // 
-            // date_start
-            // 
-            this.date_start.HeaderText = "Дата начала";
-            this.date_start.Name = "date_start";
-            // 
-            // time_start
-            // 
-            this.time_start.HeaderText = "Время открытия";
-            this.time_start.Name = "time_start";
-            // 
-            // time_end
-            // 
-            this.time_end.HeaderText = "Время закрытия";
-            this.time_end.Name = "time_end";
-            // 
-            // date_end
-            // 
-            this.date_end.HeaderText = "Дата окончания";
-            this.date_end.Name = "date_end";
-            // 
-            // select
-            // 
-            this.select.HeaderText = "Выбрать";
-            this.select.Name = "select";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.checkBox1);
@@ -172,7 +141,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(528, 127);
+            this.checkBox1.Location = new System.Drawing.Point(499, 116);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(182, 21);
             this.checkBox1.TabIndex = 22;
@@ -352,6 +321,7 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "Создать новое";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button6
             // 
@@ -395,6 +365,57 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(67, 24);
             this.comboBox3.TabIndex = 12;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(499, 140);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(204, 21);
+            this.checkBox2.TabIndex = 25;
+            this.checkBox2.Text = "Не показывать удаленное";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // id_ttb
+            // 
+            this.id_ttb.HeaderText = "Номер расписания";
+            this.id_ttb.Name = "id_ttb";
+            // 
+            // countBranch
+            // 
+            this.countBranch.HeaderText = "В филиалах";
+            this.countBranch.Name = "countBranch";
+            // 
+            // date_start
+            // 
+            this.date_start.HeaderText = "Дата начала";
+            this.date_start.Name = "date_start";
+            // 
+            // time_start
+            // 
+            this.time_start.HeaderText = "Время открытия";
+            this.time_start.Name = "time_start";
+            // 
+            // time_end
+            // 
+            this.time_end.HeaderText = "Время закрытия";
+            this.time_end.Name = "time_end";
+            // 
+            // date_end
+            // 
+            this.date_end.HeaderText = "Дата окончания";
+            this.date_end.Name = "date_end";
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Выбрать";
+            this.select.Name = "select";
+            // 
+            // change
+            // 
+            this.change.HeaderText = "Изменить";
+            this.change.Name = "change";
             // 
             // FormTTB
             // 
@@ -450,6 +471,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_ttb;
         private System.Windows.Forms.DataGridViewTextBoxColumn countBranch;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_start;
@@ -457,7 +481,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time_end;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_end;
         private System.Windows.Forms.DataGridViewButtonColumn select;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewButtonColumn change;
     }
 }

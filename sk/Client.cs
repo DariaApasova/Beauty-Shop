@@ -72,6 +72,11 @@ namespace sk
                 {
                     allClients.Add(c.id, c);
                 }
+                var t = cc.Clients.Include(x => x.Visits).ToList();
+                foreach(Client c in t)
+                {
+                    int n = c.Visits.Count();
+                }
             }
             return allClients;
         }
@@ -85,7 +90,6 @@ namespace sk
                 {
                     allvisits.Add(c.id, c.Visits.Count());
                 }
-
             }
             return allvisits;
         }

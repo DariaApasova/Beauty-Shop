@@ -56,6 +56,7 @@ namespace sk
             {
                 label9.Text = "Услуга удалена";
                 delete.Visible = false;
+                change.Visible = false;
             }
         }
         private void change_CLick(object sender, EventArgs e)

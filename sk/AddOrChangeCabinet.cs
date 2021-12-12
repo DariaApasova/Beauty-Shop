@@ -12,7 +12,6 @@ namespace sk
 {
     public partial class AddOrChangeCabinet : Form
     {
-        int idb = 0;
         string check;
         Dictionary<int, Cabinet> dict = CabinetsCache.getCache();
         Cabinet cab1 = new Cabinet();
@@ -33,20 +32,12 @@ namespace sk
             }
             if(check=="change")
             {
-                if(cab1.date_delete!=Convert.ToDateTime("31.12.9999 12:00:00"))
-                {
-                    MessageBox.Show("Вы не можете изменить удаленный кабинет");
-                    this.Close();
-                }
-                else
-                {
-                    load_cab();
-                }
+                load_cab();
             }
         }
         private void load_new()
         {
-            label4.Text = "Расписание не выбрано";
+            label4.Text = "ФИлиал не выбран";
             textBox1.Text = "";
             numericUpDown1.Value = 1;
             richTextBox1.Text = "";

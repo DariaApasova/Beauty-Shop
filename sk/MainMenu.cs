@@ -22,7 +22,7 @@ namespace sk
         private void seeClients_Click(object sender, EventArgs e)
         {
           
-            FormClient form = new FormClient(check);
+            FormClient form = new FormClient(check,0);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
         }

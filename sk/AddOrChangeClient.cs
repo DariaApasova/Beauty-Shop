@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace sk
 {
@@ -28,19 +29,11 @@ namespace sk
         {
             if (check == "add")
             {
-                fillNewService();
+                loadNew();
             }
             if (check == "change")
             {
-                if (client1.date_delete != Convert.ToDateTime("31.12.9999 12:00:00"))
-                {
-                    MessageBox.Show("Вы не можете изменить удаленную услугу");
-                    this.Close();
-                }
-                else
-                {
-                    loadClient(client1);
-                }
+                loadClient(client1);
             }
         }
         private void loadClient(Client s)
@@ -50,42 +43,39 @@ namespace sk
             {
                 richTextBox1.Text = s.notes;
             }
-            textBox2.Text = Convert.ToString(s.phone);
+            maskedTextBox1.Text = s.phone;
         }
-        private void fillNewService()
+        private void loadNew()
         {
-           /* save.Enabled = true;
-            title.Text = "";
-            notes.Text = "";
-            duration.Text = "";
-            price.Text = "";*/
+            textBox1.Text = "";
+            richTextBox1.Text = "";
         }
         private void saveClient()
         {
-            Client client = client1;
-            client1.name = textBox1.Text;
-            client1.phone = textBox2.Text;
-            client1.notes = richTextBox1.Text;
-            client1.date_delete = Convert.ToDateTime("31.12.9999 12:00:00");
             using (ClientContext sc = new ClientContext())
             {
-                Client s1 = new Client { id = curid, phone=textBox2.Text, notes=richTextBox1.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00") };
                 if (check == "add")
                 {
+                    Client s1 = new Client { id = curid, name = textBox1.Text, phone = maskedTextBox1.Text, notes = richTextBox1.Text, date_delete = Convert.ToDateTime("31.12.9999 12:00:00") };
                     sc.Clients.Add(s1);
                 }
                 if (check == "change")
                 {
+                    Client client = client1;
+                    client1.name = textBox1.Text;
+                    client1.phone =maskedTextBox1.Text;
+                    client1.notes = richTextBox1.Text;
+                    client1.date_delete = Convert.ToDateTime("31.12.9999 12:00:00");
                     sc.Entry(client1).State = System.Data.Entity.EntityState.Modified;
                 }
                 sc.SaveChanges();
-
+                ClientsCache.updateCache();
             }
         }
         private void save_Click(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
-            textBox2.Enabled = false;
+           maskedTextBox1.Enabled = false;
             richTextBox1.Enabled = false;
             saveClient();
             string text = "Услуга успешно сохранена.";
@@ -93,6 +83,11 @@ namespace sk
             MessageBox.Show(text, caption);
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

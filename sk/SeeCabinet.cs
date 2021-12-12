@@ -51,8 +51,9 @@ namespace sk
             }
             else
             {
-                label8.Text = "Кабинет удалена";
+                label8.Text = "Кабинет удален";
                 button3.Visible = false;
+                button2.Visible = false;
             }
         }
 

@@ -42,12 +42,23 @@ namespace sk
                 }
             }
             textBox4.Text = Convert.ToString(count);
+            if(client1.date_delete==Convert.ToDateTime("31.12.9999 12:00:00"))
+            {
+                label6.Visible = false;
+            }
+            else
+            {
+                label6.Text = "Клиент удален";
+                button3.Visible = false;
+                button1.Visible = false;
+            }
             
         }
         private void change_CLick(object sender, EventArgs e)
         {
             AddOrChangeClient form = new AddOrChangeClient(client1, "change");
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formCLosing);
             form.ShowDialog();
         }
 
@@ -56,6 +67,24 @@ namespace sk
             FormVisit form = new FormVisit("detClient", client1.id);
             form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog();
+        }
+        void formCLosing(object sender, FormClosingEventArgs e)
+        {
+            load();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string time = DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss");
+            client1.date_delete = Convert.ToDateTime(time);
+            using (ClientContext sc = new ClientContext())
+            {
+                sc.Entry(client1).State = System.Data.Entity.EntityState.Modified;
+                sc.SaveChanges();
+            }
+            string text = "Клиент успешно удален.";
+            string caption = "Уведомление";
+            MessageBox.Show(text, caption);
         }
     }
 }

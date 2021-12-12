@@ -32,15 +32,7 @@ namespace sk
             }
             if(check=="change")
             {
-                if(service1.date_delete!=Convert.ToDateTime("31.12.9999 12:00:00"))
-                {
-                    MessageBox.Show("Вы не можете изменить удаленную услугу");
-                    this.Close();
-                }
-                else
-                {
-                    loadService(service1);
-                }
+                loadService(service1);
             }
         }
         private void loadService(Service s)
