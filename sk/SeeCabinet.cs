@@ -33,7 +33,7 @@ namespace sk
             richTextBox1.Text = c.notes;
             richTextBox1.Enabled = false;
             textBox6.Enabled = false;
-            Dictionary<int, Attendance> lst = AttendanceCache.lstWorkers();
+            Dictionary<int, Attendance> lst = AttendanceCache.getCache();
             int count = 0;
             foreach(Attendance a in lst.Values)
             {

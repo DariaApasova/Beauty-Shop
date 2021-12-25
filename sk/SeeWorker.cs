@@ -12,7 +12,7 @@ namespace sk
 {
     public partial class SeeWorker : Form
     {
-        Dictionary<int, Attendance> att = AttendanceCache.lstWorkers();
+        Dictionary<int, Attendance> att = AttendanceCache.getCache();
         Dictionary<int, Worker> dict = WorkersCache.getCache();
         Worker w = new Worker();
         public SeeWorker(Worker wor)
@@ -49,7 +49,10 @@ namespace sk
 
 
         }
-
+        void formCLosing(object sender, FormClosingEventArgs e)
+        {
+            load();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             FormVisit form = new FormVisit("detWorker", w.id);
@@ -61,6 +64,14 @@ namespace sk
         {
             FormService form = new FormService("detWorker",w.id);
             form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddOrChangeWorker form = new AddOrChangeWorker(w, "change");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formCLosing);
             form.ShowDialog();
         }
     }

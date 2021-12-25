@@ -78,7 +78,7 @@ namespace sk
            maskedTextBox1.Enabled = false;
             richTextBox1.Enabled = false;
             saveClient();
-            string text = "Услуга успешно сохранена.";
+            string text = "Клиент успешно сохранен.";
             string caption = "Уведомление";
             MessageBox.Show(text, caption);
 

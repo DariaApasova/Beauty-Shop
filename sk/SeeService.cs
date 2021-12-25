@@ -38,7 +38,7 @@ namespace sk
             textBox6.Enabled = false;
             textBox6.Text = Convert.ToString(service1.Workers.Count());
             int count = 0;
-            Dictionary<int, Attendance> lst = AttendanceCache.lstWorkers();
+            Dictionary<int, Attendance> lst = AttendanceCache.getCache();
             foreach(Attendance a in lst.Values)
             {
                 if(a.service.id==service1.id)

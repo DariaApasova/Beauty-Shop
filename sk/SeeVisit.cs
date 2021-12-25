@@ -13,7 +13,7 @@ namespace sk
     public partial class SeeVisit : Form
     {
         Visit visit=new Visit();
-        Dictionary<int, Attendance> att = AttendanceCache.lstWorkers();
+        Dictionary<int, Attendance> att = AttendanceCache.getCache();
         public SeeVisit(Visit t)
         {
             InitializeComponent();

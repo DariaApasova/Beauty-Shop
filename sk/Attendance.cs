@@ -33,7 +33,7 @@ namespace sk
     static class AttendanceCache
     {
         private static Dictionary<int, Attendance> allatt = new Dictionary<int, Attendance>();
-        public static Dictionary<int,Attendance> lstWorkers()
+        public static Dictionary<int,Attendance> getCache()
         {
             allatt.Clear();
             using (AttendaceContext ac = new AttendaceContext())

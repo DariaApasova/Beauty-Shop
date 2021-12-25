@@ -34,7 +34,7 @@ namespace sk
             textBox3.Text = Convert.ToString(b.address);
             textBox4.Enabled = false;
             textBox4.Text = Convert.ToString(b.Cabinets.Count());
-            Dictionary<int, Attendance> lst = AttendanceCache.lstWorkers();
+            Dictionary<int, Attendance> lst = AttendanceCache.getCache();
             int count = 0;
             foreach(Attendance a in lst.Values)
             {
