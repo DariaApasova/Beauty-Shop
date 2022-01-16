@@ -45,7 +45,7 @@ namespace sk
                     comboBox1.Items.Add(w.position);
                 }
             }
-            if (check == "see")
+            if (check == "see"||check=="choose")
             {
                 if (all > 10)
                 {
@@ -68,10 +68,53 @@ namespace sk
             {
                 numericUpDown1.Value = dicts.FirstOrDefault(x => x.Key == curid).Value.Workers.Count();
             }
+            if(check=="chooseForVisit")
+            {
+                all = dict.Where(x => x.Value.Services.ToList().Contains(dicts.FirstOrDefault(y => y.Key == curid).Value)).Count();
+                count = 0;
+                if(all>10)
+                {
+                    numericUpDown1.Value = 10;
+                    int i = 1;
+                    if (i <= 10)
+                    {
+                        foreach (Worker w in dict.Values)
+                        {
+                            foreach (Service s in w.Services.ToList())
+                            {
+                                if (s.id == curid)
+                                {
+                                    i++;
+                                    used.Add(w.id, w);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    numericUpDown1.Value = all;
+                    int i = 1;
+                    if(i<=all)
+                    {
+                        foreach (Worker w in dict.Values)
+                        {
+                            foreach (Service s in w.Services.ToList())
+                            {
+                                if (s.id == curid)
+                                {
+                                    i++;
+                                    used.Add(w.id, w);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         private void statistic(string f)
         {
-            if (check == "see")
+            if (check == "see"||check=="choose")
             {
                 pages.Clear();
                 if (f == "filters")
@@ -95,6 +138,49 @@ namespace sk
                 if (f == "all")
                 {
                     count = dict.Count;
+                    if (Convert.ToDecimal(count / numericUpDown1.Value) > 1)
+                    {
+                        page = Convert.ToInt16(Math.Ceiling(Convert.ToDecimal(count / numericUpDown1.Value)));
+                        for (int i = 1; i <= page; i++)
+                        {
+                            pages.Add(i);
+                        }
+                    }
+                    else
+                    {
+                        pages.Add(1);
+                    }
+                    count = Convert.ToInt16(numericUpDown1.Value);
+                    updUsed();
+                    load();
+                }
+                textBox7.Text = Convert.ToString(1);
+                test();
+            }
+            if(check=="chooseForVisit")
+            {
+                pages.Clear();
+                if (f == "filters")
+                {
+                    count = dataGridView1.Rows.Count;
+                    if (Convert.ToDecimal(count / numericUpDown1.Value) > 1)
+                    {
+                        page = Convert.ToInt16(Math.Ceiling(Convert.ToDecimal(count / numericUpDown1.Value)));
+                        for (int i = 1; i <= page; i++)
+                        {
+                            pages.Add(i);
+                        }
+                    }
+                    else
+                    {
+                        pages.Add(1);
+                    }
+                    count = Convert.ToInt16(numericUpDown1.Value);
+                    updUsed();
+                }
+                if (f == "all")
+                {
+                    count = dict.Count(x => x.Value.Services.Contains(dicts.FirstOrDefault(y => y.Key == curid).Value));
                     if (Convert.ToDecimal(count / numericUpDown1.Value) > 1)
                     {
                         page = Convert.ToInt16(Math.Ceiling(Convert.ToDecimal(count / numericUpDown1.Value)));
@@ -168,7 +254,7 @@ namespace sk
         private void updUsed()
         {
             used.Clear();
-            if (check == "see")
+            if (check == "see" || check == "choose")
             {
                 for (int i = 1; i <= count; i++)
                 {
@@ -228,7 +314,7 @@ namespace sk
             {
                 b = true;c = true;d = true;
                 int t = Convert.ToInt16(textBox1.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -271,7 +357,7 @@ namespace sk
             {
                 string t = textBox2.Text.ToLower();
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach (Worker w in dict.Values)
                     {
@@ -318,7 +404,7 @@ namespace sk
             {
                 string t = maskedTextBox1.Text;
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -365,7 +451,7 @@ namespace sk
             {
                 string t = comboBox1.SelectedItem.ToString();
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -409,7 +495,7 @@ namespace sk
                 string q = textBox2.Text.ToLower();
                 string e = maskedTextBox1.Text;
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -457,7 +543,7 @@ namespace sk
                 string q = textBox2.Text;
                 string e = comboBox1.SelectedItem.ToString();
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -505,7 +591,7 @@ namespace sk
                 string q = maskedTextBox1.Text;
                 string e = comboBox1.SelectedItem.ToString();
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -554,7 +640,7 @@ namespace sk
                 string e = maskedTextBox1.Text;
                 string t = comboBox1.SelectedItem.ToString();
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Worker w in dict.Values)
                     {
@@ -602,7 +688,8 @@ namespace sk
         }
         private void load()
         {
-            if(check=="see")
+
+            if(check == "see")
             {
                 dataGridView1.ReadOnly = true;
                 dataGridView1.Columns[5].Visible = false;
@@ -621,6 +708,33 @@ namespace sk
                         else
                         {
                             load_all(w, r);
+                            r++;
+                        }
+                    }
+                }
+            }
+            if(check=="chooseForVisit")
+            {
+                dataGridView1.ReadOnly = true;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Rows.Clear();
+                checkBox2.Checked=true;
+                int r = 0;
+                foreach(Worker w in used.Values)
+                {
+                    int i = 1;
+                    if(i<count)
+                    {
+                        if(w.Services.Contains(dicts.FirstOrDefault(x=>x.Key==curid).Value))
+                        {
+                            if(checkBox2.Checked)
+                            {
+                                load_real(w, r);
+                            }
+                            else
+                            {
+                                load_all(w, r);
+                            }
                             r++;
                         }
                     }
@@ -646,7 +760,7 @@ namespace sk
                     }
                 }
             }
-             if(check=="choose")
+            if(check=="choose")
             {
                 dataGridView1.ReadOnly = true;
                 dataGridView1.Columns[5].Visible = true;
@@ -727,7 +841,7 @@ namespace sk
         {
             textBox7.Text = Convert.ToString(Convert.ToInt16(textBox7.Text) - 1);
             used.Clear();
-            if (check == "see")
+            if (check == "see" || check == "choose")
             {
                 if (textBox7.Text == "1")
                 {
@@ -760,7 +874,7 @@ namespace sk
         {
             textBox7.Text = Convert.ToString(Convert.ToInt16(textBox7.Text) + 1);
             used.Clear();
-            if (check == "see")
+            if (check == "see" || check == "choose")
             {
                 if (textBox7.Text == Convert.ToString(pages[pages.Count - 1]))
                 {

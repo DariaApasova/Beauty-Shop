@@ -1266,7 +1266,7 @@ namespace sk
                     int i = lastindex + 1; ;
                     using (VisitContext vc = new VisitContext())
                     {
-                        var visits = vc.Visits.Include("Client").Include("Branch").ToList();
+                        var visits = vc.Visits.Include("Client").Include("Branch").Where(x=>x.id>=i).ToList();
                         foreach (Visit v in visits)
                         {
                             if (i <all+1)
@@ -1282,7 +1282,7 @@ namespace sk
                     int i = lastindex + 1;
                     using (VisitContext vc = new VisitContext())
                     {
-                        var visits = vc.Visits.Include("Client").Include("Branch").ToList();
+                        var visits = vc.Visits.Include("Client").Include("Branch").Where(x=>x.id>=i).ToList();
                         foreach (Visit v in visits)
                         {
                             if (i < lastindex+count+1)
@@ -1333,7 +1333,6 @@ namespace sk
             test();
             load();
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             if(textBox1.Text == string.Empty&&label2.Text == "Клиент"&&label3.Text == "Филиал"&&label13.Text == "Работник"
@@ -1347,6 +1346,20 @@ namespace sk
             {
                 statistic("filters");
             }
+        }
+        private void addNew_Click(object sender, EventArgs e)
+        {
+            Visit v = new Visit();
+            AddOrChangeVisit form = new AddOrChangeVisit("add", v);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.FormClosing += new FormClosingEventHandler(formCLosed);
+            form.ShowDialog();
+
+        }
+        private void formCLosed(object sednerr, FormClosingEventArgs e)
+        {
+            updUsed();
+            load();
         }
     }
 }

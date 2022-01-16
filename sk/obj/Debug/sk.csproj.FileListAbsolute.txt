@@ -36,7 +36,4 @@ C:\Users\Ирина\documents\visual studio 2015\Projects\sk\sk\bin\Debug\System
 C:\Users\Ирина\documents\visual studio 2015\Projects\sk\sk\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\Ирина\documents\visual studio 2015\Projects\sk\sk\bin\Debug\EntityFramework.xml
 C:\Users\Ирина\documents\visual studio 2015\Projects\sk\sk\bin\Debug\System.Data.SQLite.xml
-C:\Users\Ирина\Documents\Visual Studio 2015\Projects\sk\sk\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Ирина\Documents\Visual Studio 2015\Projects\sk\sk\obj\Debug\sk.csproj.AssemblyReference.cache
-C:\Users\Ирина\Documents\Visual Studio 2015\Projects\sk\sk\obj\Debug\sk.csproj.CoreCompileInputs.cache
-C:\Users\Ирина\Documents\Visual Studio 2015\Projects\sk\sk\obj\Debug\sk.csproj.CopyComplete
+C:\Users\Ирина\Documents\Visual Studio 2015\Projects\sk\sk\obj\Debug\sk.csprojResolveAssemblyReference.cache

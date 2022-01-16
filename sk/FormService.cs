@@ -40,7 +40,7 @@ namespace sk
         {
             comboBox2.Items.Add("От новых к старым");
             comboBox2.Items.Add("От старых к новым");
-            if (check == "see")
+            if (check == "see"||check=="choose")
             {
                 if (all > 10)
                 {
@@ -71,7 +71,7 @@ namespace sk
         }
         private void statistic(string f)
         {
-            if (check == "see")
+            if (check == "see"||check=="choose")
             {
                 pages.Clear();
                 if (f == "filters")
@@ -218,7 +218,7 @@ namespace sk
         private void updUsed()
         {
             used.Clear();
-            if(check=="see")
+            if(check == "see" || check == "choose")
             {
                 for(int i=1;i<=count;i++)
                 {
@@ -295,7 +295,7 @@ namespace sk
             {
                 b = true; c = true; d = true; dur1 = true; dur2 = true;
                 int t = Convert.ToInt16(textBox1.Text);
-                if (check == "see")
+                if (check == "see" || check == "choose")
                 {
                     foreach (Service s in dict.Values)
                     {
@@ -336,7 +336,7 @@ namespace sk
             {
                 c = true;d = true;dur1 = true;dur2 = true;
                 string t = textBox2.Text.ToLower();
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     int r = 0;
                     foreach(Service s in dict.Values)
@@ -385,7 +385,7 @@ namespace sk
             {
                 decimal t = Convert.ToDecimal(textBox3.Text);
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -431,7 +431,7 @@ namespace sk
                 int r = 0;
                 decimal q = Convert.ToDecimal(textBox3.Text);
                 TimeSpan w = TimeSpan.Parse(maskedTextBox1.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -524,7 +524,7 @@ namespace sk
                 decimal q = Convert.ToDecimal(textBox3.Text);
                 TimeSpan w = TimeSpan.Parse(maskedTextBox1.Text);
                 TimeSpan e = TimeSpan.Parse(maskedTextBox2.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -569,7 +569,7 @@ namespace sk
             {
                 int r = 0;
                 decimal t = Convert.ToDecimal(textBox4.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -615,7 +615,7 @@ namespace sk
                 decimal q = Convert.ToDecimal(textBox4.Text);
                 TimeSpan w = TimeSpan.Parse(maskedTextBox1.Text);
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -661,7 +661,7 @@ namespace sk
                 decimal q = Convert.ToDecimal(textBox4.Text);
                 TimeSpan w = TimeSpan.Parse(maskedTextBox2.Text);
                 int r = 0;
-                if (check == "see")
+                if (check == "see" || check == "choose")
                 {
                     foreach (Service s in dict.Values)
                     {
@@ -708,7 +708,7 @@ namespace sk
                 TimeSpan w = TimeSpan.Parse(maskedTextBox1.Text);
                 TimeSpan e = TimeSpan.Parse(maskedTextBox2.Text);
                 int r = 0;
-                if (check == "see")
+                if (check == "see" || check == "choose")
                 {
                     foreach (Service s in dict.Values)
                     {
@@ -754,7 +754,7 @@ namespace sk
                 int r = 0;
                 decimal q = Convert.ToDecimal(textBox3.Text);
                 decimal w = Convert.ToDecimal(textBox4.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -801,7 +801,7 @@ namespace sk
                 decimal q = Convert.ToDecimal(textBox3.Text);
                 decimal w = Convert.ToDecimal(textBox4.Text);
                 TimeSpan e = TimeSpan.Parse(maskedTextBox1.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -848,7 +848,7 @@ namespace sk
                 decimal q = Convert.ToDecimal(textBox3.Text);
                 decimal w = Convert.ToDecimal(textBox4.Text);
                 TimeSpan e = TimeSpan.Parse(maskedTextBox2.Text);
-                if (check == "see")
+                if (check == "see" || check == "choose")
                 {
                     foreach (Service s in dict.Values)
                     {
@@ -896,7 +896,7 @@ namespace sk
                 decimal w = Convert.ToDecimal(textBox4.Text);
                 TimeSpan e = TimeSpan.Parse(maskedTextBox1.Text);
                 TimeSpan t = TimeSpan.Parse(maskedTextBox2.Text);
-                if (check == "see")
+                if (check == "see" || check == "choose")
                 {
                     foreach (Service s in dict.Values)
                     {
@@ -941,7 +941,7 @@ namespace sk
             {
                 TimeSpan t = TimeSpan.Parse(maskedTextBox1.Text);
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -986,7 +986,7 @@ namespace sk
             {
                 TimeSpan t = TimeSpan.Parse(maskedTextBox2.Text);
                 int r = 0;
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -1032,7 +1032,7 @@ namespace sk
                 int r = 0;
                 TimeSpan q = TimeSpan.Parse(maskedTextBox1.Text);
                 TimeSpan w = TimeSpan.Parse(maskedTextBox2.Text);
-                if(check=="see")
+                if(check == "see" || check == "choose")
                 {
                     foreach(Service s in dict.Values)
                     {
@@ -1292,7 +1292,7 @@ namespace sk
         {
             textBox7.Text = Convert.ToString(Convert.ToInt16(textBox7.Text) + 1);
             used.Clear();
-            if (check == "see")
+            if (check == "see" || check == "choose")
             {
                 if (textBox7.Text == Convert.ToString(pages[pages.Count - 1]))
                 {
@@ -1334,7 +1334,7 @@ namespace sk
         {
             textBox7.Text = Convert.ToString(Convert.ToInt16(textBox7.Text) - 1);
             used.Clear();
-            if (check == "see")
+            if (check == "see" || check == "choose")
             {
                 if (textBox7.Text == "1")
                 {
@@ -1372,7 +1372,6 @@ namespace sk
             test();
             load();
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex==5)

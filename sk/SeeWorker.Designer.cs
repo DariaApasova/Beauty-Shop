@@ -91,45 +91,58 @@
             this.delete_ttw});
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(675, 266);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // id_ttw
             // 
             this.id_ttw.HeaderText = "Номер расписания";
+            this.id_ttw.MinimumWidth = 6;
             this.id_ttw.Name = "id_ttw";
+            this.id_ttw.Width = 125;
             // 
             // time_start
             // 
             this.time_start.HeaderText = "Время начала";
+            this.time_start.MinimumWidth = 6;
             this.time_start.Name = "time_start";
+            this.time_start.Width = 125;
             // 
             // time_end
             // 
             this.time_end.HeaderText = "Время конца";
+            this.time_end.MinimumWidth = 6;
             this.time_end.Name = "time_end";
+            this.time_end.Width = 125;
             // 
             // id_dranch
             // 
             this.id_dranch.HeaderText = "Номер филиала";
+            this.id_dranch.MinimumWidth = 6;
             this.id_dranch.Name = "id_dranch";
+            this.id_dranch.Width = 125;
             // 
             // change
             // 
             this.change.HeaderText = "Изменить";
+            this.change.MinimumWidth = 6;
             this.change.Name = "change";
             this.change.Width = 80;
             // 
             // repeat
             // 
             this.repeat.HeaderText = "Повторить";
+            this.repeat.MinimumWidth = 6;
             this.repeat.Name = "repeat";
             this.repeat.Width = 80;
             // 
             // delete_ttw
             // 
             this.delete_ttw.HeaderText = "Удалить";
+            this.delete_ttw.MinimumWidth = 6;
             this.delete_ttw.Name = "delete_ttw";
             this.delete_ttw.Width = 70;
             // 

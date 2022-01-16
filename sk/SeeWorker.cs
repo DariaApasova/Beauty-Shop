@@ -74,5 +74,18 @@ namespace sk
             form.FormClosing += new FormClosingEventHandler(formCLosing);
             form.ShowDialog();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==5)
+            {
+                int r = e.RowIndex;
+                int t = Convert.ToInt32(dataGridView2.Rows[r].Cells[0].Value);
+                RepeatTTW form = new RepeatTTW(t);
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.FormClosing += new FormClosingEventHandler(formCLosing);
+                form.ShowDialog();
+            }
+        }
     }
 }

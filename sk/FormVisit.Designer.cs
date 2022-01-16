@@ -473,6 +473,7 @@
             this.addNew.TabIndex = 17;
             this.addNew.Text = "Добавить новый";
             this.addNew.UseVisualStyleBackColor = true;
+            this.addNew.Click += new System.EventHandler(this.addNew_Click);
             // 
             // textBox7
             // 

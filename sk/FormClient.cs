@@ -12,7 +12,7 @@ namespace sk
 {
     public partial class FormClient : Form
     {
-        public string num;
+        public int num;
         string check;
         int curid;
         int all;
@@ -408,8 +408,8 @@ namespace sk
             if(e.ColumnIndex==4)
             {
                 int t = e.RowIndex;
-                var n = dataGridView1.Rows[t].Cells[1].Value;
-                num = Convert.ToString(n);
+                var n = dataGridView1.Rows[t].Cells[0].Value;
+                num = Convert.ToInt16(n);
                 Close();
             }
         }
